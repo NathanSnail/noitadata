@@ -1,0 +1,18 @@
+<Entity>
+
+  <!-- NOTE( Petri ): 1.6.2023 - combined the separate MagicConvertMaterialComponents into a single one. For performance reasons. -->
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    from_material_array="water,water_swamp,water_salt,radioactive_liquid"
+    to_material_array="steam,steam,steam,radioactive_gas"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    clean_stains="0"
+    is_circle="1"
+    radius="11" 
+    reaction_audio_amount="0.005"
+    >
+  </MagicConvertMaterialComponent>
+
+
+</Entity>

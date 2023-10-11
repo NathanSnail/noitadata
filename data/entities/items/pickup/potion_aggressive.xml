@@ -1,0 +1,34 @@
+<Entity tags="projectile_item">
+	<Base file="data/entities/items/pickup/potion.xml">
+		<PhysicsImageShapeComponent 
+    		image_file="data/items_gfx/potion_alchemist_normals.png" >
+		</PhysicsImageShapeComponent>
+
+		<SpriteComponent
+			offset_x="4"
+			offset_y="4"
+    		image_file="data/items_gfx/potion_alchemist.png"
+  		></SpriteComponent>
+
+	  	<ItemComponent
+	    	item_name="$item_potion"
+	    	ui_sprite="data/ui_gfx/items/potion_alchemist.png"
+	    	ui_description="$item_description_potion"
+	  	></ItemComponent>
+
+		<LuaComponent 
+			script_source_file="data/scripts/items/potion_aggressive.lua"
+		></LuaComponent>
+		
+		<LuaComponent 
+		></LuaComponent>
+
+		<LuaComponent 
+			script_death="data/scripts/items/potion_glass_break_temporary.lua" 
+		></LuaComponent>
+
+		<MaterialSuckerComponent 
+			barrel_size="500"
+		></MaterialSuckerComponent>
+	</Base>
+</Entity>

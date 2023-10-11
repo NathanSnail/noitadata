@@ -1,0 +1,85 @@
+DEBUG KEYS (mouse wheel or data/debug_keys.txt)
+-----------------------------------------------
+* F1           	   Show / Hide debug key map (this)
+* F2,F3,F4         Screenshot / select area for gif / record gif
+* SHIFT + F4       Records video (fullscreen)
+* CTRL + F4        Records video selected area
+* F5               Toggle debug mode
+* F5 + SHIFT       Opens debug_menu.lua
+* F7 (+SHIFT/CTRL) Open various debug menus
+* F8               Toggle shaders on / off
+* F9               Toggle Log levels
+* SHIFT + F9       Clears the debug log
+
+-=[ DEBUG MODE ]=-
+* RETURN          Spawn / despawn player
+* SHIFT+RETURN    Spawn a new player
+* ARROWS          Control camera in debug mode
+* +CTRL+SHIFT+ALT Moves the camera slower/faster
+* CTRL + U        Pause / unpause the simulation
+
+* I + Click       Open hovered entity in the inspector
+* BACKSPACE       Deletes the selected entity
+
+* CTRL + O        Load an entity (open inspector to it)
+* CTRL+SHIFT+O    Load the previously loaded entity
+* CTRL + S        Save the inspected entity into a file
+* CTRL + I        Close the inspector
+
+* SHIFT + U       Save selected player item entity into a file
+* ALT + SHIFT+U   Saves the items as separate xml -files
+
+* CTRL+TAB        Toggle Material Menu
+* 0-9 +SHFT       Debug brush select
+* CTRL+LMOUSE     Debug draw material
+* CTRL+RMOUSE     Debug destroy material
+* ,               Material picker
+
+* H               Huge explosion
+* P               Creates a peasant
+* SHIFT + P       Creates a test wand
+* Y               Creates a barrel
+* M               Creates a vegetation sprite
+* R               Loads a ragdoll (needs a txt file)
+* T               Loads a pixel scene (clears scene rect)
+* SHIFT + T       Loads a pixel scene
+* Z               Loads a zombie
+* SHIFT + Z       Loads a shotgunner
+* SHIFT + ALT + Z Loads an SMG scavenger
+* X               Loads a worm
+* SHIFT + X       Loads a big worm
+* K               Load an image as a Pixel Sprite
+* SHIFT + K       Uses given image to "loose a chunk"
+* J               Physics joint
+
+* CTRL + U        Pause simulation
+* CTRL+ALT+SPACE  Pause some of the simulation
+* CTRL + B        Pause Box2D simulation
+
+* B               Toggle Debug draw Box2D
+* SHIFT + B       Toggle Debug draw update rects
+* V               Toggles smooth rendering on and off
+* N               Toggle CollsionChecker debug drawings
+
+* L               Open world state entity  
+* CTRL + L        Open weather / parallax background config
+
+-- profiler
+* CTRL + P           Open Profiler window, list of all the things
+* CTRL + SHIFT + P   Open Profiler Bars
+* CTRL + ALT + P     Open Frame Viewer
+
+-- extra debugish keys 
+* F10              Loads an image and creates physics body using random material
+* F12              Trailer recording mode
+* SHIFT + O        Toggles debug display of path finding grid
+* CTRL + R         Reloads the Pixel Scenes
+* ALT + R          Converts ground into TNT
+* ALT + T          Tests randomness of items
+* CTRL + C         Take control of the selected entity
+* ALT + C          Restarts the game
+* CTRL + Y         Loads a foreground sprite
+* CTRL + F         Load image as selected material
+* J                Creates a particle puff
+* SHIFT + ,        Does a blob reaction (rock_static->steam)
+* ALT + 0-9        Changes language to various different languages

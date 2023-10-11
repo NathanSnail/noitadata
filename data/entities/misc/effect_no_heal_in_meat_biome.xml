@@ -1,0 +1,21 @@
+<Entity >
+	
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent
+		_enabled="0"
+		_tags="effect_no_heal_in_meat_biome"
+        effect="NO_HEAL"
+        frames="-1"
+    >
+	</GameEffectComponent >
+
+	<BiomeTrackerComponent />
+	<LuaComponent
+		script_biome_entered="data/scripts/misc/no_heal_in_meat_biome.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

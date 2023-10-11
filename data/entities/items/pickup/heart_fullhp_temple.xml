@@ -1,0 +1,26 @@
+<Entity tags="drillable,hittable,teleportable_NOT">
+
+   <Base file="data/entities/items/pickup/heart_fullhp.xml" >
+
+		<LuaComponent 
+			script_item_picked_up="data/scripts/items/heart_fullhp_temple.lua" >
+		</LuaComponent>
+
+   </Base>
+
+	<CollisionTriggerComponent
+      width="24"
+      height="24" 
+      radius="32"
+      required_tag="polymorphed_player" 
+      destroy_this_entity_when_triggered="0"
+      >
+  	</CollisionTriggerComponent>
+
+    <LuaComponent
+      script_collision_trigger_hit="data/scripts/items/heart_fullhp_temple.lua"
+      execute_every_n_frame="-1" 
+      >
+    </LuaComponent>
+
+</Entity>

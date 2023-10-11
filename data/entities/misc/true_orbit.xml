@@ -1,0 +1,23 @@
+<Entity >
+   
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/true_orbit.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		_tags="true_orbit_dist"
+		name="true_orbit_dist"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		_tags="true_orbit_dir"
+		name="true_orbit_dir"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+  
+</Entity>

@@ -1,0 +1,9 @@
+data/ragdolls/shotgunner_hell/torso.png
+data/ragdolls/shotgunner_hell/head.png
+data/ragdolls/shotgunner_hell/gun.png
+data/ragdolls/shotgunner_hell/left_arm.png
+data/ragdolls/shotgunner_hell/left_hand.png
+data/ragdolls/shotgunner_hell/left_thigh.png
+data/ragdolls/shotgunner_hell/left_foot.png
+data/ragdolls/shotgunner_hell/right_thigh.png
+data/ragdolls/shotgunner_hell/right_foot.png

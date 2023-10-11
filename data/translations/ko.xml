@@ -1,0 +1,9 @@
+<Language
+	name="한국어"
+	font_default="data/fonts/generated/notosans_ko_48.bin"
+	font_inventory_title="data/fonts/generated/notosans_ko_48.bin"
+	font_important_message_title="data/fonts/generated/notosans_ko_48.bin"
+	font_world_space_message="data/fonts/generated/notosans_ko_48.bin"
+	fonts_utf8="1"
+>
+</Language>

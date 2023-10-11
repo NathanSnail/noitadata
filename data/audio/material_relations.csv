@@ -1,0 +1,27 @@
+Material A ?,rock,wood,woodwall,metalhollow,metalhollow_barrel,metalhollow_gold,metalwall,metalchain,electricwire,meat,organicsoft,organicbouncy,ceramic,ice,glass,glass_potion,gold,bone,sand,gravel,snow,cloth,liquid,slime,character_player,projectile
+rock,collision/rock,,,,,,,,,,,,,,,,,,,,,,,,rock,rock
+wood,,collision/wood,,,,,,,,,,,,,,,,,,,,,,,wood,rock
+woodwall,,,collision/woodwall,,,,,,,,,,,,,,,,,,,,,,wood,wood
+metalhollow,,,,collision/metalhollow,,,,,,,,,,,,,,,,,,,,,metal,metal
+metalhollow_barrel,,,,,collision/metalhollow_barrel,,,,,,,,,,,,,,,,,,,,metal,metal
+metalhollow_gold,,,,,,collision/metalhollow_gold,,,,,,,,,,,,,,,,,,,,
+metalwall,,,,,,,collision/metalwall,,,,,,,,,,,,,,,,,,metal,metal
+metalchain,,,,,,,,collision/metalchain,,,,,,,,,,,,,,,,,,
+electricwire,,,,,,,,,collision/electricwire,,,,,,,,,,,,,,,,,
+meat,,,,,,,,,,collision/meat,,,,,,,,,,,,,,,slime,organic
+organicsoft,,,,,,,,,,,collision/meat,,,,,,,,,,,,,,gravel,organic
+organicbouncy,,,,,,,,,,,,collision/meatbouncy,,,,,,,,,,,,,gravel,organic
+ceramic,,,,,,,,,,,,,collision/ceramic,,,,,,,,,,,,rock,rock
+ice,,,,,,,,,,,,,,collision/ice,,,,,,,,,,,ice,rock
+glass,,,,,,,,,,,,,,,collision/glass,,,,,,,,,,ice,rock
+glass_potion,,,,,,,,,,,,,,,,collision/glasspotion,,,,,,,,,ice,rock
+gold,,,,,,,,,,,,,,,,,collision/gold,,,,,,,,rock,rock
+bone,,,,,,,,,,,,,,,,,,collision/bone,,,,,,,rock,rock
+sand,,,,,,,,,,,,,,,,,,,collision/sand,,,,,,sand,rock
+gravel,,,,,,,,,,,,,,,,,,,,collision/gravel,,,,,gravel,rock
+snow,,,,,,,,,,,,,,,,,,,,,collision/snow,,,,snow,organic
+cloth,,,,,,,,,,,,,,,,,,,,,,collision/cloth,,,,
+liquid,,,,,,,,,,,,,,,,,,,,,,,,,water,water
+slime,,,,,,,,,,,,,,,,,,,,,,,,,slime,rock
+character_player,,,,,,,,,,,,,,,,,,,,,,,,,,rock
+projectile,,,,,,,,,,,,,,,,,,,,,,,,,,

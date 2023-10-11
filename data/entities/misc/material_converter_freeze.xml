@@ -1,0 +1,18 @@
+<Entity>
+	<MagicConvertMaterialComponent
+      from_material_array="water,water_ice,water_salt,water_fading,water_static,fire,lava,water_swamp,radioactive_liquid,acid,blood_cold,blood,poison,slime,radioactive_liquid_fading"
+      to_material_array="ice_static,ice_static,ice_static,ice_static,ice_static,air,rock_static,ice_static,ice_radioactive_static,ice_acid_static,ice_cold_static,ice_blood_static,ice_poison_static,ice_slime_static,ice_radioactive_static"
+      kill_when_finished="0"
+      steps_per_frame="5"
+      is_circle="1"
+      radius="72" >
+    </MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      extinguish_fire="1"
+      is_circle="1"
+      radius="72" >
+    </MagicConvertMaterialComponent>
+
+</Entity>

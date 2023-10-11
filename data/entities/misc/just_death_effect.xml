@@ -1,0 +1,17 @@
+<Entity tags="projectile_player" >
+	<MagicConvertMaterialComponent
+		from_any_material="0"
+		convert_entities="1"
+        to_material="just_death"
+        steps_per_frame="4"
+        loop="0"
+		is_circle="1"
+        radius="12" >
+    </MagicConvertMaterialComponent>
+	
+	<LifetimeComponent
+		lifetime="3"
+	>
+	</LifetimeComponent>
+  
+</Entity>

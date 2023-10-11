@@ -1,0 +1,12 @@
+<Entity >
+	
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent
+        effect="NO_HEAL"
+        frames="-1"
+    >
+	</GameEffectComponent >
+
+</Entity>

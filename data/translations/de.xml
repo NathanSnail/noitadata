@@ -1,0 +1,13 @@
+<Language
+	name="Deutsche"
+	font_default="data/fonts/font_pixel.xml"
+	font_inventory_title="data/fonts/font_pixel_big.xml"
+	font_important_message_title="data/fonts/font_pixel_huge.xml"
+	font_world_space_message="data/fonts/font_pixel.xml"
+	fonts_utf8="1"
+	fonts_pixel_font="1"
+	ui_action_info_offset2="35"
+	ui_wand_info_offset1="15"
+	ui_wand_info_offset2="30"
+>
+</Language>

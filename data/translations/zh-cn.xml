@@ -1,0 +1,9 @@
+<Language
+	name="简体中文"
+	font_default="data/fonts/generated/notosans_zhcn_48.bin"
+	font_inventory_title="data/fonts/generated/notosans_zhcn_48.bin"
+	font_important_message_title="data/fonts/generated/notosans_zhcn_48.bin"
+	font_world_space_message="data/fonts/generated/notosans_zhcn_48.bin"
+	fonts_utf8="1"
+>
+</Language>

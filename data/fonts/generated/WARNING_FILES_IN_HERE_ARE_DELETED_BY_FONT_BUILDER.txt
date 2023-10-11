@@ -1,0 +1,1 @@
+tools/font_builder/GENERATE_ALL.bat deletes all the files in this folder

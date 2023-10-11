@@ -1,0 +1,8 @@
+<Entity tags="no_polymorphing_allowed">
+	  <HitboxComponent 
+	    aabb_min_x="-320" 
+	    aabb_min_y="-320"
+	    aabb_max_x="320" 
+	    aabb_max_y="320" >
+	  </HitboxComponent>
+</Entity>

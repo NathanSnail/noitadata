@@ -1,0 +1,201 @@
+<Entity name="$animal_sniper_hell" >
+
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="70"
+			attack_melee_damage_min="1.4" 
+			attack_melee_damage_max="1.7"
+			creature_detection_range_x="700"
+			creature_detection_range_y="700"
+			attack_melee_max_distance="10"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="1"
+			can_fly="0"  
+			attack_ranged_action_frame="8"
+			attack_ranged_min_distance="10"
+			attack_ranged_max_distance="800"
+			attack_ranged_entity_file="data/entities/projectiles/sniperbullet_hell.xml"
+			attack_ranged_entity_count_min="4"
+			attack_ranged_entity_count_max="8"
+			attack_ranged_frames_between="100" 
+			attack_ranged_use_laser_sight="1"
+			attack_ranged_laser_sight_beam_kind="0"
+			attack_ranged_offset_y="-5"
+			attack_ranged_offset_x="8"
+			aggressiveness_min="80"
+			aggressiveness_max="100"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+			hp="4.8"
+			materials_create_messages="1"
+			ragdoll_filenames_file="data/ragdolls/sniper_hell/filenames.txt" 
+			fire_probability_of_ignition="0"
+			ragdoll_offset_x="4"
+			blood_multiplier="1.2"
+			blood_spray_material="liquid_fire"
+			blood_material="liquid_fire"
+			>
+			<damage_multipliers
+				projectile="0.6"
+				explosion="0.6"
+				slice="1"
+				ice="0"
+				fire="0"
+				holy="2.0"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/sniper_hell.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			jump_speed="70"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="50" >
+			<jump_trajectories>
+				<JumpTrajectory x="5" y="15" lob="1" />
+				<JumpTrajectory x="7" y="20" lob="1" />
+				<JumpTrajectory x="10" y="-30" lob="1" />
+				<JumpTrajectory x="40" y="-35" lob="1" />
+				<JumpTrajectory x="50" y="-40" lob="1" />
+				<JumpTrajectory x="60" y="75"  lob="1" />
+			</jump_trajectories>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="9"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-16" 
+			run_velocity="32"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_max_x="5" 
+			aabb_max_y="3" 
+			aabb_min_x="-5" 
+			aabb_min_y="-12" 
+			damage_multiplier="0.5"
+			>
+		</HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-2.0" 
+			collision_aabb_max_x="2.0" 
+			collision_aabb_min_y="-9" 
+			collision_aabb_max_y="3" 
+			mass="1.2"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="30" 
+		offset_y="-7"
+		r="190"
+		g="200"
+		fade_out_time="1.5" >
+	</LightComponent>
+
+	<SpriteComponent 
+		_tags="laser_sight"
+		_enabled="1" 
+		alpha="1" 
+		image_file="data/particles/laser_red.png"
+		offset_x="5" 
+		offset_y="1"
+		emissive="1"
+		additive="1"
+		visible="0"
+		update_transform="0"
+		next_rect_animation="" 
+		rect_animation="default" 
+		>
+	</SpriteComponent>
+
+	<ItemPickUpperComponent
+		is_in_npc="1">
+	</ItemPickUpperComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/sniper" >
+	</AudioComponent>
+
+	<HotspotComponent
+		_tags="hand"
+		offset.x="5"
+		offset.y="-6" >
+	</HotspotComponent>
+	<Entity>
+	    <GameEffectComponent 
+	        effect="ALLERGY_RADIOACTIVE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<SpriteComponent 
+        _tags="character" 
+		alpha="1" 
+		image_file="data/enemies_gfx/sniper_hell_overlay.xml"
+		emissive="1"
+        additive="1"
+		rect_animation="walk" >
+	</SpriteComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="blood"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="-4"
+		y_pos_offset_max="4"
+		x_vel_min="-8"
+		x_vel_max="8"
+		gravity.y="1.0"
+		y_vel_min="-8"
+		y_vel_max="8"
+		count_min="1"
+		count_max="2"
+		lifetime_min="0.1"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="5"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+</Entity>
+

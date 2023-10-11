@@ -1,0 +1,36 @@
+<FontData>
+  <Texture>
+    data/fonts/font_damage.png
+  </Texture>
+  <LineHeight>
+    6
+  </LineHeight>
+  <CharSpace>
+    0
+  </CharSpace>
+  <WordSpace>
+    5
+  </WordSpace>
+  <QuadChar id="45" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="0" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="48" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="6" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="49" offset_x="0" offset_y="0" rect_h="6" rect_w="4" rect_x="12" rect_y="0" width="4" >
+  </QuadChar>
+  <QuadChar id="50" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="17" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="51" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="23" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="52" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="29" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="53" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="35" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="54" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="41" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="55" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="47" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="56" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="53" rect_y="0" width="5" >
+  </QuadChar>
+  <QuadChar id="57" offset_x="0" offset_y="0" rect_h="6" rect_w="5" rect_x="59" rect_y="0" width="5" >
+  </QuadChar>
+</FontData>

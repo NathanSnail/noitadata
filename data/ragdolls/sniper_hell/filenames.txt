@@ -1,0 +1,7 @@
+data/ragdolls/sniper_hell/torso.png
+data/ragdolls/sniper_hell/head.png
+data/ragdolls/sniper_hell/sniper.png
+data/ragdolls/sniper_hell/right_thigh.png
+data/ragdolls/sniper_hell/right_foot.png
+data/ragdolls/sniper_hell/left_thigh.png
+data/ragdolls/sniper_hell/left_foot.png

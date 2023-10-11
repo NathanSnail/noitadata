@@ -1,0 +1,13 @@
+<Entity>
+
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="WEAKNESS"
+        frames="600"
+    >
+	</GameEffectComponent >
+
+</Entity>
