@@ -85,17 +85,21 @@
     >
   </SpriteParticleEmitterComponent>
 
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/bullet_disc">
-  </AudioComponent>
-  
-  <AudioLoopComponent
-		file="data/audio/Desktop/projectiles.bank"
-		event_name="player_projectiles/bullet_disc/loop"
-		auto_play="1">
-	</AudioLoopComponent>
+    <AudioComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_root="player_projectiles/bullet_disc_bigger">
+    </AudioComponent>
+
+    <AudioLoopComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_name="player_projectiles/bullet_disc_bigger/loop"
+        auto_play="1">
+    </AudioLoopComponent>
 	
+    <MusicEnergyAffectorComponent
+        energy_target="1">
+    </MusicEnergyAffectorComponent>
+
 	<LuaComponent
 		script_source_file="data/scripts/projectiles/disc_bullet_bigger_trajectory.lua"
 		execute_every_n_frame="3"

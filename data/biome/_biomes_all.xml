@@ -1026,4 +1026,12 @@
 		height_index="0"
 		color="ff572828" >
 	</Biome>
+
+	<!-- static tile example -->
+	<!--<Biome 
+		biome_filename="data/biome/static_tile_test_00.xml" 
+		height_index="0"
+		color="ffff0000" >
+	</Biome>-->
+	
 </BiomesToLoad>

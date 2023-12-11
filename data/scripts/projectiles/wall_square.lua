@@ -23,3 +23,5 @@ shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wal
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_piece.xml", pos_x + side, pos_y, 0, 0 )
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_builder.xml", pos_x + side, pos_y, 0, speed )
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_builder.xml", pos_x + side, pos_y, 0, 0 - speed )
+
+EntityLoad( "data/entities/projectiles/deck/wall_sound.xml", pos_x, pos_y )

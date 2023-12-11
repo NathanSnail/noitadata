@@ -47,5 +47,11 @@
 		lifetime="600"
 		>
 	</LifetimeComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="projectiles/slime">
+	</AudioComponent>
+
 </Entity>
 

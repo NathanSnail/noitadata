@@ -65,5 +65,5 @@
 		value_string="data/entities/projectiles/deck/wall_horizontal.xml"
 		>
 	</VariableStorageComponent>
-  
+
 </Entity>

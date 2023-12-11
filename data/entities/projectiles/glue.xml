@@ -38,6 +38,12 @@
 		lifetime="500"
 		>
 	</LifetimeComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="projectiles/slime">
+	</AudioComponent>
+
 	<!--
 	<ParticleEmitterComponent 
 		emitted_material_name="glue"

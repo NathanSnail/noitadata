@@ -109,7 +109,7 @@
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="projectiles/bullet_launcher">
+		event_root="projectiles/slime">
 	</AudioComponent>
 
 	<VariableStorageComponent

@@ -17,7 +17,8 @@
     wang_map_height="256"
     limit_background_image="0"
     coarse_map_force_terrain="1"
-    audio_music_2="wandcave"
+    audio_music_2="watercave"
+    audio_music_trigger_without_danger="1"
     audio_ambience="wandcave"
     fog_of_war_type="HEAVY_NO_CLEAR"
     >

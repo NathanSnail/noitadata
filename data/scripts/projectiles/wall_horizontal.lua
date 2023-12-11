@@ -11,3 +11,5 @@ GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_piece.xml", pos_x, pos_y, 0, 0 )
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_builder.xml", pos_x, pos_y, vel_x, vel_y )
 shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/wall_builder.xml", pos_x, pos_y, 0 - vel_x, vel_y )
+
+EntityLoad( "data/entities/projectiles/deck/wall_sound.xml", pos_x, pos_y )

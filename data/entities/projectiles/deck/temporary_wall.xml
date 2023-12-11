@@ -57,6 +57,7 @@
 		stains_enabled="0" 
 		>
 	</config_explosion>
+
   </ProjectileComponent>
   
   <ParticleEmitterComponent 
@@ -87,4 +88,12 @@
 		y_vel_max="20"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/wall/loop_solid"
+		set_speed_parameter="0"
+		auto_play="1">
+	</AudioLoopComponent>
+
 </Entity>

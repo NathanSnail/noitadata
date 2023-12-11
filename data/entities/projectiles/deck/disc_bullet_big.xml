@@ -87,17 +87,21 @@
     >
   </SpriteParticleEmitterComponent>
 
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/bullet_disc">
-  </AudioComponent>
-  
-  <AudioLoopComponent
-		file="data/audio/Desktop/projectiles.bank"
-		event_name="player_projectiles/bullet_disc/loop"
-		auto_play="1">
-	</AudioLoopComponent>
-  
+    <AudioComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_root="player_projectiles/bullet_disc_big">
+    </AudioComponent>
+
+    <AudioLoopComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_name="player_projectiles/bullet_disc_big/loop"
+        auto_play="1">
+    </AudioLoopComponent>
+    
+    <MusicEnergyAffectorComponent
+        energy_target="1">
+    </MusicEnergyAffectorComponent>
+
 	<VariableStorageComponent
 		name="angle"
 		value_string="-1"

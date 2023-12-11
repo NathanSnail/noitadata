@@ -88,11 +88,18 @@
     >
   </SpriteParticleEmitterComponent>
 
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/bullet_disc">
-  </AudioComponent>
+    <AudioComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_root="player_projectiles/bullet_disc">
+    </AudioComponent>
   
+    <AudioLoopComponent
+        file="data/audio/Desktop/projectiles.bank"
+        event_name="player_projectiles/bullet_disc/loop"
+        set_speed_parameter="1"
+        auto_play="1">
+    </AudioLoopComponent>
+    
 	<VariableStorageComponent
 		name="projectile_file"
 		value_string="data/entities/projectiles/deck/disc_bullet.xml"

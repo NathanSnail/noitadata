@@ -104,4 +104,11 @@
       event_root="player_projectiles/tentacle_portal"
       set_latest_event_position="1" >
 	</AudioComponent>
+
+  <AudioLoopComponent
+    file="data/audio/Desktop/projectiles.bank"
+    event_name="player_projectiles/tentacle_portal/loop"
+    auto_play="1">
+  </AudioLoopComponent>
+    
 </Entity>
