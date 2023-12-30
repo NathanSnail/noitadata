@@ -240,5 +240,15 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_MELEE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>

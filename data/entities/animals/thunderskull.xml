@@ -175,6 +175,16 @@
 		emission_interval_frames="32"
 		>
   </ElectricitySourceComponent>
+  
+  <Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 	
 </Entity>
 

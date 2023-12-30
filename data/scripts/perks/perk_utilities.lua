@@ -188,6 +188,10 @@ function add_halo_level(entity_who_picked, amount, set_to_this_value)
 				fire_resistance = fire_resistance / 0.9
 				--print(fire_resistance)
 				ComponentObjectSetValue( damagemodel, "damage_multipliers", "fire", tostring(fire_resistance) )
+				
+				local holy_resistance = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "holy" ))
+				holy_resistance = holy_resistance / 0.9
+				ComponentObjectSetValue( damagemodel, "damage_multipliers", "holy", tostring(holy_resistance) )
 			end
 		end
 	elseif halo_gained then
@@ -203,13 +207,17 @@ function add_halo_level(entity_who_picked, amount, set_to_this_value)
 			AddFlagPersistent( "player_status_halo" )
 		end
 
-		-- add fire resistance
+		-- add fire & holy resistance
 		if( damagemodels ~= nil ) then
 			for i,damagemodel in ipairs(damagemodels) do
 				local fire_resistance = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "fire" ))
 				fire_resistance = fire_resistance * 0.9
 				--print(fire_resistance)
 				ComponentObjectSetValue( damagemodel, "damage_multipliers", "fire", tostring(fire_resistance) )
+				
+				local holy_resistance = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "holy" ))
+				holy_resistance = holy_resistance * 0.9
+				ComponentObjectSetValue( damagemodel, "damage_multipliers", "holy", tostring(holy_resistance) )
 			end
 		end
 	end

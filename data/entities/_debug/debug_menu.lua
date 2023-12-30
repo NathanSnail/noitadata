@@ -382,6 +382,86 @@ main_menu_items =
 			fungal_shift( player_entity, x, y, true )
 		end,
 	},
+	{
+		ui_name="Fungal shift to rock",
+		action = function()
+			local from_material = CellFactory_GetType( "water" )
+			local to_material = CellFactory_GetType( "rock_static" )
+			ConvertMaterialEverywhere( from_material, to_material )
+			local from_material = CellFactory_GetType( "blood" )
+			local to_material = CellFactory_GetType( "rock_static" )
+			ConvertMaterialEverywhere( from_material, to_material )
+			local from_material = CellFactory_GetType( "smoke" )
+			local to_material = CellFactory_GetType( "rock_static" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift from rock",
+		action = function()
+			local from_material = CellFactory_GetType( "rock_static_grey" )
+			local to_material = CellFactory_GetType( "water" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift to rock",
+		action = function()
+			local from_material = CellFactory_GetType( "water" )
+			local to_material = CellFactory_GetType( "ice_static" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift water to weird fungus",
+		action = function()
+			local from_material = CellFactory_GetType( "water" )
+			local to_material = CellFactory_GetType( "fungi" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift ambrosia to diamond",
+		action = function()
+			local from_material = CellFactory_GetType( "magic_liquid_protection_all" )
+			local to_material = CellFactory_GetType( "diamond" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift ambrosia to acid",
+		action = function()
+			local from_material = CellFactory_GetType( "magic_liquid_protection_all" )
+			local to_material = CellFactory_GetType( "acid" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift weird fungus to steam",
+		action = function()
+			local from_material = CellFactory_GetType( "fungi" )
+			local to_material = CellFactory_GetType( "steam" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift blood -> poly",
+		action = function()
+			local from_material = CellFactory_GetType( "blood" )
+			local to_material = CellFactory_GetType( "magic_liquid_polymorph" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+	{
+		ui_name="Fungal shift blood -> toxic sludge",
+		action = function()
+			local from_material = CellFactory_GetType( "blood" )
+			local to_material = CellFactory_GetType( "radioactive_liquid" )
+			ConvertMaterialEverywhere( from_material, to_material )
+		end,
+	},
+
+
 	--[[{
 		ui_name="Fungal shift lava->water",
 		action = function()

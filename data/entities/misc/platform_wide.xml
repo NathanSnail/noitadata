@@ -43,4 +43,14 @@
 		execute_every_n_frame="40"
 		>
 	</LuaComponent>
+
+	<AudioLoopComponent
+		_tags="magic_eye"
+		_enabled="0"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/wall/loop_solid"
+		set_speed_parameter="0"
+		play_on_component_enable="1"
+		auto_play_if_enabled="1">
+	</AudioLoopComponent>
 </Entity>

@@ -1,4 +1,4 @@
-<Entity tags="hittable,teleportable_NOT,item_physics,item_pickup" >
+<Entity tags="hittable,teleportable_NOT,item_physics,item_pickup,powder_stash" >
 
   <!-- physical presence -->
   

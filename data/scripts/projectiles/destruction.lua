@@ -33,7 +33,7 @@ if ( #players > 0 ) then
 			for _,damagemodel in ipairs(damagemodels) do
 				local hp = ComponentGetValue2( damagemodel, "hp" )
 
-				hp = math.max( 0.04, hp - math.max( hp * 0.1, 0.8 ) )
+				hp = math.max( 0.04, hp - math.max( hp * 0.075, 0.5 ) )
 				
 				ComponentSetValue2( damagemodel, "hp", hp )
 			end

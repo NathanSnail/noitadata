@@ -1,0 +1,42 @@
+<Entity tags="effect_slime" >
+	
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent
+		_tags="spirit_slime"
+        effect="SLIMY"
+        frames="120"
+    >
+	</GameEffectComponent >
+	
+	<LifetimeComponent
+		lifetime="100"
+		>
+	</LifetimeComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_purple_bright"
+		gravity.y="0"
+		lifetime_min="0.3"
+		lifetime_max="2"
+		count_min="1"
+		count_max="2"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="4"
+		emit_cosmetic_particles="1"
+		emit_real_particles="0"
+		x_vel_min="-20"
+		x_vel_max="20"
+		y_vel_min="-20"
+		y_vel_max="20"
+		is_emitting="1"
+	></ParticleEmitterComponent>
+
+</Entity>

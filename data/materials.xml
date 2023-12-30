@@ -5597,7 +5597,7 @@
   <CellData
 	name="water"
 	ui_name="$mat_water"
-  	tags="[liquid],[corrodible],[freezable],[water],[liquid_common]"
+  	tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="4"
 	cell_type="liquid"
@@ -5747,7 +5747,7 @@
   <CellData
 	name="water_ice"
 	ui_name="$mat_water_ice"
-  	tags="[liquid],[corrodible],[meltable_to_water],[freezable],[water],[liquid_common]"
+  	tags="[liquid],[corrodible],[meltable_to_water],[freezable],[water],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="3.5"
 	cell_type="liquid"
@@ -5810,7 +5810,7 @@
   <CellData
 	name="oil"
 	ui_name="$mat_oil"
-  	tags="[liquid],[burnable],[impure],[liquid_common]"
+  	tags="[liquid],[burnable],[impure],[liquid_common],[chaotic_transmutation]"
 	burnable="1"
 	density="1"
 	cell_type="liquid"
@@ -5900,7 +5900,7 @@
   <CellData
 	name="alcohol"
 	ui_name="$mat_alcohol"
-  	tags="[liquid],[water],[impure],[liquid_common]"
+  	tags="[liquid],[water],[impure],[liquid_common],[chaotic_transmutation]"
 	density="3.5"
 	cell_type="liquid"
 	wang_color="90d0ffe8"
@@ -7103,7 +7103,7 @@
   <CellData
 	name="swamp"
 	ui_name="$mat_swamp"
-  	tags="[liquid],[corrodible],[soluble],[meltable_to_water],[freezable],[water],[impure],[liquid_common]"
+  	tags="[liquid],[corrodible],[soluble],[meltable_to_water],[freezable],[water],[impure],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="3.5"
 	cell_type="liquid"
@@ -7165,7 +7165,7 @@
   <CellData
 	name="blood"
 	ui_name="$mat_blood"
-  	tags="[liquid],[corrodible],[soluble],[blood],[impure],[liquid_common],[food]"
+  	tags="[liquid],[corrodible],[soluble],[blood],[impure],[liquid_common],[food],[chaotic_transmutation]"
 	burnable="0"
 	density="4.1"
 	cell_type="liquid"
@@ -7220,7 +7220,7 @@
   <CellData
 	name="blood_fungi"
 	ui_name="$mat_blood_fungi"
-  	tags="[liquid],[corrodible],[soluble],[evaporable],[blood],[impure],[liquid_common],[food],[fungus]"
+  	tags="[liquid],[corrodible],[soluble],[evaporable],[blood],[impure],[liquid_common],[food],[fungus],[chaotic_transmutation]"
 	burnable="0"
 	density="3"
 	cell_type="liquid"
@@ -7269,7 +7269,7 @@
   <CellData
 	name="blood_worm"
 	ui_name="$mat_blood_worm"
-  	tags="[liquid],[corrodible],[soluble],[blood],[impure],[liquid_common],[food]"
+  	tags="[liquid],[corrodible],[soluble],[blood],[impure],[liquid_common],[food],[chaotic_transmutation]"
 	burnable="0"
 	density="2.123"
 	cell_type="liquid"
@@ -7361,7 +7361,7 @@
   <CellData
 	name="radioactive_liquid"
 	ui_name="$mat_radioactive_liquid"
-  	tags="[liquid],[corrodible],[soluble],[radioactive],[impure],[liquid_common]"
+  	tags="[liquid],[corrodible],[soluble],[radioactive],[impure],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="3"
 	cell_type="liquid"
@@ -8333,7 +8333,7 @@
   <CellData
 	name="sand"
 	ui_name="$mat_sand"
-  	tags="[sand_ground],[corrodible],[meltable_to_lava_fast],[alchemy]"
+  	tags="[sand_ground],[corrodible],[meltable_to_lava_fast],[alchemy],[chaotic_transmutation]"
 	burnable="0"
 	density="6"
 	cell_type="liquid"
@@ -8434,7 +8434,7 @@
   <CellData
 	name="bone"
 	ui_name="$mat_bone"
-  	tags="[sand_ground],[corrodible],[meltable_to_lava],[alchemy]"
+  	tags="[sand_ground],[corrodible],[meltable_to_lava],[alchemy],[chaotic_transmutation]"
 	burnable="0"
 	density="6"
 	cell_type="liquid"
@@ -8733,7 +8733,7 @@
   <CellData 
 	name="honey"
 	ui_name="$mat_honey"
-  	tags="[corrodible],[meltable_to_lava_fast],[alchemy],[meltable_by_fire]"
+  	tags="[corrodible],[meltable_to_lava_fast],[alchemy],[meltable_by_fire],[chaotic_transmutation]"
 	burnable="0"  
 	density="10"  
 	cell_type="liquid" 
@@ -8800,7 +8800,7 @@
   <CellData 
 	name="slime"
 	ui_name="$mat_slime_pink"
-  	tags="[corrodible],[meltable_to_lava],[alchemy],[slime],[liquid_common],[food]"
+  	tags="[corrodible],[meltable_to_lava],[alchemy],[slime],[liquid_common],[food],[chaotic_transmutation]"
 	burnable="0"  
 	density="5"  
 	cell_type="liquid" 
@@ -8840,7 +8840,7 @@
   <CellData 
 	name="slush"
 	ui_name="$mat_slush"
-  	tags="[corrodible],[meltable_to_water],[alchemy],[snow]"
+  	tags="[corrodible],[meltable_to_water],[alchemy],[snow],[chaotic_transmutation]"
 	burnable="0"  
 	density="3"  
 	cell_type="liquid" 
@@ -8871,7 +8871,7 @@
   	_inherit_reactions="0"
   	name="slime_green" 
 	ui_name="$mat_slime_green"
-  	tags="[corrodible],[meltable_to_lava],[alchemy],[slime],[liquid_common],[food]"
+  	tags="[corrodible],[meltable_to_lava],[alchemy],[slime],[liquid_common],[food],[chaotic_transmutation]"
 	wang_color="8880FF80" 
 	liquid_viscosity="0"
 	liquid_sticks_to_ceiling="100"
@@ -8975,7 +8975,7 @@
   	_inherit_reactions="0"
   	name="endslime" 
 	ui_name="$mat_endslime"
-	tags="[static],[corrodible],[alchemy],[slime]"
+	tags="[static],[corrodible],[alchemy],[slime],[chaotic_transmutation]"
 	wang_color="888AFF80" 
 	liquid_viscosity="0"
 	liquid_sticks_to_ceiling="100"
@@ -9152,7 +9152,7 @@
   <CellData
 	name="snow"
 	ui_name="$mat_snow"
-  	tags="[static],[sand_ground],[corrodible],[frozen],[meltable_to_water],[alchemy]"
+  	tags="[static],[sand_ground],[corrodible],[frozen],[meltable_to_water],[alchemy],[chaotic_transmutation]"
 	burnable="0"
 	density="8"
 	cell_type="liquid"
@@ -10004,7 +10004,7 @@
   <CellData
 	name="coal"
 	ui_name="$mat_coal"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[chaotic_transmutation]"
 	burnable="1"
 	density="6"
 	cell_type="liquid"
@@ -10059,7 +10059,7 @@
   <CellData
 	name="salt"
 	ui_name="$mat_salt"
-  	tags="[sand_other],[corrodible],[alchemy]"
+  	tags="[sand_other],[corrodible],[alchemy],[chaotic_transmutation]"
 	burnable="0"
 	density="6"
 	cell_type="liquid"
@@ -10170,7 +10170,7 @@
   <CellData
 	name="gunpowder"
 	ui_name="$mat_gunpowder"
-  	tags="[sand_other],[corrodible],[alchemy]"
+  	tags="[sand_other],[corrodible],[alchemy],[chaotic_transmutation]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -10197,7 +10197,7 @@
   <CellData
 	name="gunpowder_explosive"
 	ui_name="$mat_gunpowder_explosive"
-  	tags="[sand_other],[corrodible],[alchemy]"
+  	tags="[sand_other],[corrodible],[alchemy],[chaotic_transmutation]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -10273,7 +10273,7 @@
   <CellData
 	name="gunpowder_unstable"
 	ui_name="$mat_gunpowder_unstable"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[chaotic_transmutation]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -11339,7 +11339,7 @@
   <CellData
 	name="acid"
 	ui_name="$mat_acid"
-  	tags="[liquid],[acid],[impure],[liquid_common]"
+  	tags="[liquid],[acid],[impure],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="2.9"
 	cell_type="liquid"
@@ -11385,7 +11385,7 @@
   <CellData
 	name="lava"
 	ui_name="$mat_lava"
-  	tags="[fire_lava],[liquid],[lava],[liquid_common]"
+  	tags="[fire_lava],[liquid],[lava],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="6"
 	cell_type="liquid"
@@ -14518,7 +14518,7 @@
   <CellData
 	name="blood_thick"
 	ui_name="$mat_blood_thick"
-	tags="[static],[corrodible],[blood],[food]"
+	tags="[static],[corrodible],[blood],[food],[chaotic_transmutation]"
 	burnable="0"
 	density="10"
 	platform_type="0"

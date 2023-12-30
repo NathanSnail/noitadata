@@ -88,7 +88,7 @@ function get_held_item_material( entity_id )
 	local inventory2_comp = EntityGetFirstComponentIncludingDisabled( entity_id, "Inventory2Component" )
 	if ( inventory2_comp ~= nil ) then
 		local active_item = ComponentGetValue( inventory2_comp, "mActiveItem" )
-		if ( EntityHasTag( active_item, "potion" ) ) then
+		if ( EntityHasTag( active_item, "potion" ) ) or ( EntityHasTag( active_item, "powder_stash" ) ) then
 			return GetMaterialInventoryMainMaterial( active_item )
 		end
 	end
@@ -116,55 +116,63 @@ function fungal_shift( entity, x, y, debug_no_limits )
 	end
 
 	local iter = tonumber( GlobalsGetValue( "fungal_shift_iteration", "0" ) )
-	GlobalsSetValue( "fungal_shift_iteration", tostring(iter+1) )
-	if iter > 20 and not debug_no_limits then
+	if iter >= 20 and not debug_no_limits then
 		return
 	end
 
-	SetRandomSeed( 89346, 42345+iter )
-
+	---
 	local converted_any = false
-
-	local rnd = random_create(9123,58925+iter ) -- TODO: store for next change
-	local from = pick_random_from_table_weighted( rnd, materials_from )
-	local to = pick_random_from_table_weighted( rnd, materials_to )
-	local held_material = get_held_item_material( entity )
+	local convert_tries = 0
 	local from_material_name = ""
 
-	-- if a potion is equipped, randomly use main material from potion as one of the materials
-	if held_material > 0 and random_nexti( rnd, 1, 100 ) <= 75 then
-		if random_nexti( rnd, 1, 100 ) <= 50 then
-			from = {}
-			from.materials = { CellFactory_GetName(held_material) }
-		else
-			to = {}
-			to.material = CellFactory_GetName(held_material)
-		end
-	end
+	while converted_any == false and convert_tries < 20 do
+		local seed2 = 42345 + iter + 1000*convert_tries
+		SetRandomSeed( 89346, seed2 )
+		local rnd = random_create( 9123, seed2 )
+		local from = pick_random_from_table_weighted( rnd, materials_from )
+		local to = pick_random_from_table_weighted( rnd, materials_to )
+		local held_material = get_held_item_material( entity )
 
-	-- apply effects
-	for i,it in ipairs(from.materials) do
-		local from_material = CellFactory_GetType( it )
-		local to_material = CellFactory_GetType( to.material )
-		from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( from_material ) ) )
-		if from.name_material then
-			from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( CellFactory_GetType( from.name_material ) ) ) )
+		-- if a potion is equipped, randomly use main material from potion as one of the materials
+		if held_material > 0 and random_nexti( rnd, 1, 100 ) <= 75 then
+			if random_nexti( rnd, 1, 100 ) <= 50 then
+				from = {}
+				from.materials = { CellFactory_GetName(held_material) }
+			else
+				to = {}
+				to.material = CellFactory_GetName(held_material)
+			end
 		end
 
-		-- convert
-		if from_material ~= to_material then
-			print(CellFactory_GetUIName(from_material) .. " -> " .. CellFactory_GetUIName(to_material))
-			ConvertMaterialEverywhere( from_material, to_material )
-			converted_any = true
+		-- apply effects
+		for i,it in ipairs(from.materials) do
+			local from_material = CellFactory_GetType( it )
+			local to_material = CellFactory_GetType( to.material )
+			from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( from_material ) ) )
+			if from.name_material then
+				from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( CellFactory_GetType( from.name_material ) ) ) )
+			end
 
-			-- shoot particles of new material
-			GameCreateParticle( CellFactory_GetName(from_material), x-10, y-10, 20, rand(-100,100), rand(-100,-30), true, true )
-			GameCreateParticle( CellFactory_GetName(from_material), x+10, y-10, 20, rand(-100,100), rand(-100,-30), true, true )
+			-- convert
+			if from_material ~= to_material then
+				print(CellFactory_GetUIName(from_material) .. " -> " .. CellFactory_GetUIName(to_material))
+				ConvertMaterialEverywhere( from_material, to_material )
+				converted_any = true
+
+				-- shoot particles of new material
+				GameCreateParticle( CellFactory_GetName(from_material), x-10, y-10, 20, rand(-100,100), rand(-100,-30), true, true )
+				GameCreateParticle( CellFactory_GetName(from_material), x+10, y-10, 20, rand(-100,100), rand(-100,-30), true, true )
+			end
 		end
+
+		convert_tries = convert_tries+1
 	end
 
 	-- fx
 	if converted_any then
+		-- increment only here, in case had very bad luck and didn't get a shift
+		GlobalsSetValue( "fungal_shift_iteration", tostring(iter+1) )
+
 		-- remove tripping effect
 		EntityRemoveIngestionStatusEffect( entity, "TRIP" );
 

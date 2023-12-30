@@ -138,6 +138,10 @@ ethereal_being
 playerghost
 phantom_a
 phantom_b
+confusespirit
+berserkspirit
+weakspirit
+slimespirit
 necromancer
 gazer
 skygazer
@@ -156,10 +160,12 @@ necromancer_shop
 necromancer_super
 boss_dragon
 boss_limbs
+boss_meat
 boss_alchemist
 parallel_alchemist
 boss_ghost
 boss_ghost_polyp
+islandspirit
 boss_pit
 boss_robot
 fish_giga

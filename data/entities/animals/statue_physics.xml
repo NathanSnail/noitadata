@@ -195,6 +195,16 @@
 		count_min="1" count_max="1"
     >
   </SpriteParticleEmitterComponent>
+  
+  <Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>
 

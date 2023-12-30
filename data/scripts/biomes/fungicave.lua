@@ -235,6 +235,18 @@ g_big_enemies =
 		entity 	= "data/entities/animals/drone_shield.xml",
 		ngpluslevel = 2,
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/slimespirit.xml",
+	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/confusespirit.xml",
+	},
 }
 
 ------------ ITEMS ------------------------------------------------------------

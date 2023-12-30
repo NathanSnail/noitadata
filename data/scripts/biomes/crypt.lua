@@ -132,6 +132,12 @@ g_small_enemies =
 		entity 	= "data/entities/animals/wizard_weaken.xml",
 		ngpluslevel = 1,
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/weakspirit.xml",
+	},
 }
 
 g_big_enemies =

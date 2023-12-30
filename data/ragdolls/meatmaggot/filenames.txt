@@ -1,0 +1,9 @@
+data/ragdolls/meatmaggot/part_1.png
+data/ragdolls/meatmaggot/part_2.png
+data/ragdolls/meatmaggot/part_3.png
+data/ragdolls/meatmaggot/part_4.png
+data/ragdolls/meatmaggot/part_5.png
+data/ragdolls/meatmaggot/part_6.png
+data/ragdolls/meatmaggot/part_7.png
+data/ragdolls/meatmaggot/part_8.png
+data/ragdolls/meatmaggot/part_9.png

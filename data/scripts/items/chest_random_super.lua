@@ -30,7 +30,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 		count = count - 1
 		local rnd = Random(1,100)
 
-		if( rnd <= 30 ) then
+		if( rnd <= 10 ) then
 			-------------------------------------------------------------------
 			-- Potion
 			-------------------------------------------------------------------
@@ -44,9 +44,9 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 				table.insert( entities, { "data/entities/items/pickup/potion_secret.xml" } )
 				table.insert( entities, { "data/entities/items/pickup/potion_random_material.xml" } )
 			end
-		elseif( rnd <= 33 ) then
+		elseif( rnd <= 15 ) then
 			table.insert( entities, { "data/entities/projectiles/rain_gold.xml" } )
-		elseif( rnd <= 38 ) then
+		elseif( rnd <= 18 ) then
 			local rnd2 = Random(1,30)
 			
 			if (rnd2 ~= 30) then
@@ -63,21 +63,21 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			rnd = Random(0,100)
 			
 			if( rnd <= 25 ) then
-				table.insert( entities, { "data/entities/items/wand_level_03.xml" } )
-			elseif( rnd <= 50 ) then
-				table.insert( entities, { "data/entities/items/wand_unshuffle_03.xml" } )
-			elseif( rnd <= 75 ) then
 				table.insert( entities, { "data/entities/items/wand_level_04.xml" } )
-			elseif( rnd <= 90 ) then
+			elseif( rnd <= 50 ) then
 				table.insert( entities, { "data/entities/items/wand_unshuffle_04.xml" } )
-			elseif( rnd <= 96 ) then
+			elseif( rnd <= 75 ) then
 				table.insert( entities, { "data/entities/items/wand_level_05.xml" } )
-			elseif( rnd <= 98 ) then
+			elseif( rnd <= 90 ) then
 				table.insert( entities, { "data/entities/items/wand_unshuffle_05.xml" } )
+			elseif( rnd <= 96 ) then
+				table.insert( entities, { "data/entities/items/wand_level_06.xml" } )
+			elseif( rnd <= 98 ) then
+				table.insert( entities, { "data/entities/items/wand_unshuffle_06.xml" } )
 			elseif( rnd <= 99 ) then
 				table.insert( entities, { "data/entities/items/wand_level_06.xml" } )
 			elseif( rnd <= 100 ) then
-				table.insert( entities, { "data/entities/items/wand_unshuffle_06.xml" } )
+				table.insert( entities, { "data/entities/items/wand_level_10.xml" } )
 			end
 		elseif( rnd <= 60 ) then
 			-------------------------------------------------------------------
@@ -92,7 +92,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			else
 				table.insert( entities, { "data/entities/items/pickup/heart_fullhp.xml" } )
 			end
-		elseif( rnd <= 99 ) then
+		elseif( rnd <= 98 ) then
 			-------------------------------------------------------------------
 			-- exploding "dice"
 			-------------------------------------------------------------------

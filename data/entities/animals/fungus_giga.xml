@@ -144,5 +144,15 @@
 		file="data/audio/Desktop/animals.bank"
 		event_root="animals/fungus" >
 	</AudioComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_EXPLOSION"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>

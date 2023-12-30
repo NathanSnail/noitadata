@@ -12,10 +12,14 @@ if ( comp ~= nil ) then
 	
 	if ( comp ~= nil ) then
 		local mult = ComponentObjectGetValue2( comp, "damage_multipliers", name )
+		mult = mult - 0.25
+		ComponentObjectSetValue2( comp, "damage_multipliers", name, mult )
 		
+		--[[
 		if ( mult > 0 ) then
 			mult = mult - 0.25
 			ComponentObjectSetValue2( comp, "damage_multipliers", name, mult )
 		end
+		]]--
 	end
 end

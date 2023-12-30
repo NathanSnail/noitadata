@@ -401,6 +401,27 @@ actions =
 		end,
 	},
 	{
+		id          = "WHITE_HOLE",
+		name 		= "$action_white_hole",
+		description = "$actiondesc_white_hole",
+		sprite 		= "data/ui_gfx/gun_actions/white_hole.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/white_hole.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0,2,4,6,10", -- BLACK_HOLE
+		spawn_probability                 = "0.05,0.05,0.1,0.2,0.5", -- BLACK_HOLE
+		price = 200,
+		mana = 180,
+		max_uses    = 3, 
+		never_unlimited = true,
+		custom_xml_file = "data/entities/misc/custom_cards/white_hole.xml",
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/white_hole.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 80
+			c.screenshake = c.screenshake + 20
+		end,
+	},
+	{
 		id          = "BLACK_HOLE_BIG",
 		name 		= "$action_black_hole_big",
 		description = "$actiondesc_black_hole_big",
@@ -429,7 +450,7 @@ actions =
 		related_projectiles	= {"data/entities/projectiles/deck/white_hole_big.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
 		spawn_level                       = "1,3,5,6,10", -- BLACK_HOLE_BIG
-		spawn_probability                 = "0.1,0.1,0.1,0.4,0.2", -- BLACK_HOLE_BIG
+		spawn_probability                 = "0.05,0.05,0.1,0.4,0.2", -- BLACK_HOLE_BIG
 		price = 320,
 		mana = 240,
 		max_uses    = 6, 
@@ -461,6 +482,33 @@ actions =
 			
 			if ( #black_holes < 3 ) then
 				add_projectile("data/entities/projectiles/deck/black_hole_giga.xml")
+				c.fire_rate_wait = c.fire_rate_wait + 120
+				current_reload_time = current_reload_time + 100
+				c.screenshake = c.screenshake + 40
+			end
+		end,
+	},
+	{
+		id          = "WHITE_HOLE_GIGA",
+		name 		= "$action_white_hole_giga",
+		description = "$actiondesc_white_hole_giga",
+		sprite 		= "data/ui_gfx/gun_actions/white_hole_giga.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_big_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/white_hole_giga.xml"},
+		spawn_requires_flag = "card_unlocked_black_hole",
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "10", -- BLACK_HOLE_BIG
+		spawn_probability                 = "1", -- BLACK_HOLE_BIG
+		price = 600,
+		mana = 500,
+		max_uses    = 6,
+		never_unlimited = true,
+		custom_xml_file = "data/entities/misc/custom_cards/white_hole_giga.xml",
+		action 		= function()
+			local black_holes = EntityGetWithTag( "black_hole_giga" )
+			
+			if ( #black_holes < 3 ) then
+				add_projectile("data/entities/projectiles/deck/white_hole_giga.xml")
 				c.fire_rate_wait = c.fire_rate_wait + 120
 				current_reload_time = current_reload_time + 100
 				c.screenshake = c.screenshake + 40
@@ -1656,6 +1704,27 @@ actions =
 			add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 4
 			c.spread_degrees = c.spread_degrees + 2.0
+		end,
+	},
+	{
+		id          = "ANTIHEAL",
+		name 		= "$action_antiheal",
+		description = "$actiondesc_antiheal",
+		sprite 		= "data/ui_gfx/gun_actions/antiheal.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/bullet_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/healhurt.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "2,3,4,5", -- BULLET
+		spawn_probability                 = "0.4,0.3,0.3,0.3", -- BULLET
+		price = 200,
+		mana = 20,
+		--max_uses = -1,
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/healhurt.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 8
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 3.0
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 12.0
 		end,
 	},
 	{
@@ -3826,6 +3895,24 @@ actions =
 		end,
 	},
 	{
+		id          = "TOUCH_PISS",
+		name 		= "$action_touch_piss",
+		description = "$actiondesc_touch_piss",
+		sprite 		= "data/ui_gfx/gun_actions/touch_piss.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rocket_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/touch_piss.xml"},
+		spawn_requires_flag = "card_unlocked_piss",
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "10", -- TOUCH_ALCOHOL
+		spawn_probability                 = "0", -- TOUCH_ALCOHOL
+		price = 360,
+		mana = 190,
+		max_uses    = 4, 
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/touch_piss.xml")
+		end,
+	},
+	{
 		id          = "TOUCH_BLOOD",
 		name 		= "$action_touch_blood",
 		description = "$actiondesc_touch_blood",
@@ -3871,13 +3958,34 @@ actions =
 		spawn_level                       = "10", -- DESTRUCTION
 		spawn_probability                 = "1", -- DESTRUCTION
 		price = 600,
-		mana = 600,
+		mana = 240,
 		max_uses    = 5,
 		ai_never_uses = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/destruction.xml")
-			c.fire_rate_wait = c.fire_rate_wait + 100
-			current_reload_time = current_reload_time + 300
+			c.fire_rate_wait = c.fire_rate_wait + 150
+			current_reload_time = current_reload_time + 240
+		end,
+	},
+	{
+		id          = "MASS_POLYMORPH",
+		name 		= "$action_mass_polymorph",
+		description = "$actiondesc_mass_polymorph",
+		sprite 		= "data/ui_gfx/gun_actions/polymorph.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rocket_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/mass_polymorph.xml"},
+		spawn_requires_flag = "card_unlocked_polymorph",
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "10", -- DESTRUCTION
+		spawn_probability                 = "1", -- DESTRUCTION
+		price = 600,
+		mana = 220,
+		max_uses    = 3,
+		ai_never_uses = true,
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/mass_polymorph.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 140
+			current_reload_time = current_reload_time + 240
 		end,
 	},
 	-- modifiers
@@ -5980,6 +6088,30 @@ actions =
 			elseif ( c.speed_multiplier < 0 ) then
 				c.speed_multiplier = 0
 			end
+			
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		id          = "CLUSTERMOD",
+		name 		= "$action_clustermod",
+		description = "$actiondesc_clustermod",
+		sprite 		= "data/ui_gfx/gun_actions/clusterbomb.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/explosive_projectile_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3", -- EXPLOSIVE_PROJECTILE
+		spawn_probability                 = "0.5,1,0.6", -- EXPLOSIVE_PROJECTILE
+		price = 160,
+		mana = 30,
+		--max_uses = 50,
+		custom_xml_file = "data/entities/misc/custom_cards/clusterbomb.xml",
+		action 		= function()
+			c.explosion_radius = c.explosion_radius + 4.0
+			c.damage_explosion_add = c.damage_explosion_add + 0.2
+			c.fire_rate_wait   = c.fire_rate_wait + 20
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+			
+			c.extra_entities = c.extra_entities .. "data/entities/misc/clusterbomb.xml,"
 			
 			draw_actions( 1, true )
 		end,

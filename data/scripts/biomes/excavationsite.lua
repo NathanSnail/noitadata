@@ -100,6 +100,12 @@ g_small_enemies =
 		entity 	= "data/entities/animals/wizard_hearty.xml",
 		ngpluslevel = 2,
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/slimespirit.xml",
+	},
 	-- Demo case for Arvi
 	--[[
 	{

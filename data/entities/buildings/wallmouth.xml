@@ -1,0 +1,131 @@
+<Entity tags="glue_NOT,polymorphable_NOT,curse_NOT" >
+  <Base file="data/entities/base_enemy_basic.xml" >		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="0"
+			creature_detection_range_x="200"
+			creature_detection_range_y="200"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="0"
+			attack_melee_enabled="1"
+			can_fly="0" 
+			attack_melee_action_frame="5"
+			aggressiveness_min="95"
+			aggressiveness_max="100"
+			is_static_turret="0"
+			attack_melee_max_distance="16"
+			attack_melee_damage_min="1.2"
+			attack_melee_damage_max="1.6"
+		>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent
+			air_needed="0"
+			ragdoll_filenames_file=""
+			fire_probability_of_ignition="0" 
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/buildings_gfx/wallmouth.xml" 
+			offset_x="0"
+			offset_y="0"
+			special_scale_x="1"
+			has_special_scale="1"
+			z_index="1"
+			>
+		</SpriteComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="0" 
+			run_velocity="0"  
+			velocity_min_x="0" 
+			velocity_max_x="0" 
+			velocity_min_y="0"
+			velocity_max_y="0"
+			pixel_gravity="0"
+			>
+		</CharacterPlatformingComponent>
+		
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="0" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+			aabb_max_x="0" 
+			aabb_max_y="0" 
+			aabb_min_x="0" 
+			aabb_min_y="0"
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-3.0" 
+			collision_aabb_max_x="3.0" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="3" 
+			mass="0.01"
+			>
+	    </CharacterDataComponent>
+
+	</Base>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_FREEZE"
+			frames="-1"
+		>
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+		>
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+		<GameEffectComponent 
+			effect="PROTECTION_PROJECTILE"
+			frames="-1"
+		>
+		</GameEffectComponent >
+	</Entity>
+	
+	<LuaComponent
+		script_source_file="data/scripts/buildings/wallmouth_yawn.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+</Entity>

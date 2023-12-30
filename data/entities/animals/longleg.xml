@@ -67,5 +67,24 @@
 		file="data/audio/Desktop/animals.bank"
 		event_root="animals/longleg" >
 	</AudioComponent>
+	
+	<InteractableComponent
+		_tags="enabled_in_world,longleg_love"
+		_enabled="0"
+		name="longleg_love"
+		ui_text="$ui_longleg_love"
+        exclusivity_group="1"
+	></InteractableComponent>
+	
+	<LuaComponent
+		script_interacting="data/scripts/animals/longleg_pet.lua"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/longleg_love.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
 
 </Entity>

@@ -1,0 +1,164 @@
+<Entity tags="glue_NOT" name="$animal_weakspirit" >
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="35"
+			attack_ranged_min_distance="0"
+			attack_melee_damage_min="0.6" 
+			attack_melee_damage_max="0.8"
+			attack_dash_enabled="0"
+			attack_melee_enabled="0"
+			creature_detection_range_x="250"
+			creature_detection_range_y="250"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="0"
+			can_fly="1"  
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+			hp="3"
+			physics_objects_damage="0"
+			ragdoll_filenames_file=""
+			fire_probability_of_ignition="0" 
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			blood_material="plasma_fading"
+			blood_spray_material="plasma_fading"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			air_needed="0"
+			>
+			<damage_multipliers
+				projectile="0.8"
+				explosion="0.8"
+				electricity="1"
+				fire="0" 
+				slice="0.4"
+				holy="1.2"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/weakspirit.xml" 
+			offset_x="0"
+			offset_y="0"
+			additive="1"
+			emissive="1"
+			>
+		</SpriteComponent>
+
+		<PathFindingComponent
+		    can_swim_on_surface="1"
+			frames_to_get_stuck="20"
+			can_fly="1"
+			can_jump="0" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="15"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+    		pixel_gravity="600" 
+			jump_velocity_y="0" 
+			run_velocity="0"
+			>
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+		  max_count="30"
+		  distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-3.5" 
+		  aabb_max_x="3.5" 
+		  aabb_min_y="-3.5" 
+		  aabb_max_y="3.5" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-3.5"
+			collision_aabb_max_x="3.5"  
+			collision_aabb_min_y="-3.5"
+			collision_aabb_max_y="3.5"
+			mass="1.0"
+			>
+		</CharacterDataComponent>
+			
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/ghost" >
+		</AudioComponent>
+
+	</Base>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/spirit_aura_weak.lua"
+		execute_every_n_frame="101"
+		>
+	</LuaComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_blue"
+		gravity.y="0.0"
+		lifetime_min="0.5"
+		lifetime_max="1.2"
+		count_min="20"
+		count_max="30"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="32"
+		area_circle_radius.max="72"
+		cosmetic_force_create="0"
+		airflow_force="1.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="240"
+		>
+	</ParticleEmitterComponent>
+
+</Entity>
+

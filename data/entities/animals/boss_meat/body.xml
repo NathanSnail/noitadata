@@ -1,0 +1,59 @@
+<Sprite
+ filename="data/entities/animals/boss_meat/body.png"
+ offset_x="24"
+ offset_y="24" 
+ default_animation="stand"
+ >
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_width="48"
+  frame_height="48"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="open"
+  pos_x="0"
+  pos_y="48"
+  frame_count="4"
+  frame_width="48"
+  frame_height="48"
+  frame_wait="0.09"
+  frames_per_row="4"
+  next_animation="opened"
+  loop="0"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="opened"
+  pos_x="0"
+  pos_y="96"
+  frame_count="1"
+  frame_width="48"
+  frame_height="48"
+  frame_wait="0.12"
+  frames_per_row="4"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="close"
+  pos_x="0"
+  pos_y="144"
+  frame_count="4"
+  frame_width="48"
+  frame_height="48"
+  frame_wait="0.09"
+  frames_per_row="4"
+  next_animation="stand"
+  loop="0"   >
+ </RectAnimation>
+
+</Sprite>

@@ -10,6 +10,9 @@ dofile( "data/scripts/items/generate_shop_item.lua" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff55AF8C, "spawn_skulls" )
 RegisterSpawnFunction( 0xff4c63e1, "spawn_cyst" )
+RegisterSpawnFunction( 0xff80FF5A, "spawn_vines" )
+RegisterSpawnFunction( 0xffd97f7f, "spawn_mouth" )
+RegisterSpawnFunction( 0xffc999ff, "spawn_hanging_prop" )
 
 ------------ SMALL ENEMIES ----------------------------------------------------
 
@@ -48,6 +51,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/sniper_hell.xml"
 	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/meatmaggot.xml"
+	},
 }
 
 
@@ -77,10 +86,22 @@ g_big_enemies =
 		entity 	= "data/entities/animals/worm.xml"
 	},
 	{
+		prob   		= 0.1,
+		min_count	= 2,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/meatmaggot.xml"
+	},
+	{
 		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 		= "data/entities/animals/wizard_hearty.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 		= "data/entities/animals/slimespirit.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -393,6 +414,100 @@ g_candles =
 	},
 }
 
+g_vines =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.4,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/verlet_chains/meatvine/verlet_vine.xml"
+	},
+	{
+		prob   		= 0.3,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/verlet_chains/meatvine/verlet_vine_long.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= ""
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/verlet_chains/meatvine/verlet_vine_short.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/verlet_chains/meatvine/verlet_vine_shorter.xml"
+	},
+}
+
+g_mouth =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.4,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/buildings/wallmouth.xml"
+	},
+	{
+		prob   		= 0.3,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/buildings/walleye.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= ""
+	},
+}
+
+g_hanging_props =
+{
+	total_prob = 0,
+	-- add skullflys after this step
+	{
+		prob   		= 0.7,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= ""
+	},
+	{
+		prob   		= 0.6,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/props/suspended_cage.xml"
+	},
+	{
+		prob   		= 0.6,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/props/suspended_cage_broken.xml"
+	},
+	{
+		prob   		= 0.6,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/props/suspended_chain.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/props/suspended_seamine.xml"
+	},
+}
+
 -- actual functions that get called from the wang generator
 
 function init(x, y, w, h)
@@ -480,4 +595,17 @@ end
 function spawn_cyst(x, y)
 	if ProceduralRandom(x, y) < 0.3 then return end
 	EntityLoad( "data/entities/props/meat_cyst.xml", x+5, y+5 )
+end
+
+function spawn_vines(x, y)
+	spawn(g_vines,x+5,y+5)
+end
+
+function spawn_mouth(x, y)
+	SetRandomSeed( x, y )
+	spawn(g_mouth,x+5+Random(-10,10),y+5+Random(-10,10))
+end
+
+function spawn_hanging_prop(x, y)
+	spawn(g_hanging_props,x,y)
 end

@@ -1,0 +1,20 @@
+<Sprite
+ filename="data/entities/animals/boss_meat/limb_a.png"
+ offset_x="0"
+ offset_y="4" 
+ default_animation="stand"
+ >
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="26"
+  frame_height="5"
+  frame_wait="0.12"
+  frames_per_row="4"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

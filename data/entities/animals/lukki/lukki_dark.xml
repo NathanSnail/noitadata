@@ -219,4 +219,14 @@
 	<Entity>  <Base file="data/entities/animals/lukki/lukki_feet/lukki_dark_limb_animated.xml" />  </Entity>
 	<Entity>  <Base file="data/entities/animals/lukki/lukki_feet/lukki_dark_limb_animated.xml" />  </Entity>
 	<Entity>  <Base file="data/entities/animals/lukki/lukki_feet/lukki_dark_limb_animated.xml" />  </Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 </Entity>

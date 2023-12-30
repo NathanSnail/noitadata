@@ -220,5 +220,15 @@
 	</CameraBoundComponent>
 	
 	<GameStatsComponent />
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_PROJECTILE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>

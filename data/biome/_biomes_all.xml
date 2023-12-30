@@ -974,6 +974,12 @@
 	</Biome>
 	
 	<Biome 
+		biome_filename="data/biome/meatroom.xml" 
+		height_index="0"
+		color="ff796620" >
+	</Biome>
+	
+	<Biome 
 		biome_filename="data/biome/scale.xml" 
 		height_index="0"
 		color="ffeba500" >

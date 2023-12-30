@@ -1,0 +1,8 @@
+<Entity tags="" serialize="1">
+
+	<LuaComponent 
+		script_source_file="data/entities/animals/boss_spirit/spawner.lua"
+		execute_every_n_frame="180"
+	>
+	</LuaComponent>
+</Entity>

@@ -145,6 +145,16 @@
         additive="1"
 		rect_animation="walk" >
 	</SpriteComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_PROJECTILE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>
 

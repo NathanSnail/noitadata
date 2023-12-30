@@ -3,6 +3,8 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
+EntitySetComponentsWithTagEnabled( entity_id, "transmutation", true )
+
 local convertcomponents = EntityGetComponent( entity_id, "MagicConvertMaterialComponent" )
 
 SetRandomSeed( pos_x + 436, pos_y - 3252 )

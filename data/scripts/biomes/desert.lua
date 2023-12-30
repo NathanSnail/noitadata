@@ -4,6 +4,7 @@ dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 
 RegisterSpawnFunction( 0xff30D14E, "spawn_secret_checker" )
+RegisterSpawnFunction( 0xff616602, "spawn_huussi_checker" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
 ------------ SMALL ENEMIES ----------------------------------------------------
@@ -242,4 +243,10 @@ function material_area_checker_success( x, y )
 	EntityLoad( "data/entities/buildings/teleport_lake.xml", x, y - 200 )
 	
 	GamePrintImportant( "$log_fasttravel", "$logdesc_fasttravel" )
+end
+
+---------------------------------
+
+function spawn_huussi_checker( x, y )
+	EntityLoad( "data/entities/buildings/huussi.xml", x, y )
 end

@@ -409,4 +409,14 @@
 		script_death="data/entities/animals/boss_ghost/death.lua"
 		>
 	</LuaComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_PROJECTILE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 </Entity>

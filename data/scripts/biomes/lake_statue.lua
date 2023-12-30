@@ -10,6 +10,7 @@ RegisterSpawnFunction( 0xffb40b76, "spawn_bigfish" )
 RegisterSpawnFunction( 0xff3ae124, "spawn_small_animals" )
 RegisterSpawnFunction( 0xff31d0b4, "spawn_essence" )
 RegisterSpawnFunction( 0xff30D14E, "spawn_secret_checker" )
+RegisterSpawnFunction( 0xff57ac68, "spawn_spirit_spawner" )
 
 g_fish =
 {
@@ -274,6 +275,10 @@ end
 
 function spawn_essence(x, y)
 	EntityLoad( "data/entities/items/pickup/essence_fire.xml", x, y )
+end
+
+function spawn_spirit_spawner(x, y)
+	EntityLoad( "data/entities/animals/boss_spirit/spawner.xml", x, y )
 end
 
 function spawn_secret_checker( x, y )

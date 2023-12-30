@@ -64,7 +64,7 @@
       sparks_enabled="0"
       light_enabled="0" 
       stains_enabled="0"
-      spark_material="plasma_fading" >
+      spark_material="spark_white" >
     </config_explosion>
   </ProjectileComponent>
   

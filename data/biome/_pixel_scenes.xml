@@ -162,6 +162,9 @@
 		
 		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/music_machine_stand_visual.png" material_filename="data/biome_impl/overworld/music_machine_stand.png" pos_x="-1953" pos_y="-1360" skip_biome_checks="1" skip_edge_textures="0" >
 		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/huussi_visual.png" material_filename="data/biome_impl/huussi.png" pos_x="9000" pos_y="-1900" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
 
 		<!-- just load an entity -->
 		

@@ -1,0 +1,75 @@
+<Entity tags="hittable,islandspirit,necrobot_NOT,glue_NOT,curse_NOT">
+    <SimplePhysicsComponent
+        _tags="enabled_in_world" 
+    ></SimplePhysicsComponent>
+	
+	<HitboxComponent 
+        _tags="enabled_in_world"
+        aabb_min_x="-4" 
+        aabb_max_x="4" 
+        aabb_min_y="-4" 
+        aabb_max_y="4"
+    ></HitboxComponent>
+	
+	<DamageModelComponent 
+		hp="20" 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.1" 
+		fire_probability_of_ignition="0" 
+		blood_material="plasma_fading"
+		blood_spray_material="plasma_fading"
+		is_on_fire="0" 
+		materials_damage="1" 
+		materials_how_much_damage="0.1" 
+		materials_that_damage="acid" 
+		ragdoll_fx_forced="DISINTEGRATED"
+		ragdoll_material="spark_blue"
+		air_needed="0" 
+		>
+		<damage_multipliers
+			melee="0.0"
+			projectile="0.0"
+			explosion="0.0"
+			electricity="0.0"
+			fire="0.0"
+			slice="0.0"
+			ice="0.0"
+			holy="0.0"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+	
+	<AreaDamageComponent
+		aabb_min.x="-16" 
+		aabb_min.y="-16" 
+		aabb_max.x="16" 
+		aabb_max.y="16" 
+		damage_per_frame="0.3"
+		update_every_n_frame="1"
+		entities_with_tag="player_unit"
+		death_cause="$damage_rock_curse"
+		damage_type="DAMAGE_HOLY"
+		circle_radius="16"
+		>
+	</AreaDamageComponent>
+
+    <VelocityComponent
+        _tags="enabled_in_world"
+		gravity_y="0"
+    ></VelocityComponent>
+
+	<!-- ghost functionality and visuals -->		
+	<SpriteComponent 
+		image_file="data/projectiles_gfx/death_ghost.xml"
+		emissive="1"
+		additive="1"
+		>
+	</SpriteComponent>
+	
+	<LuaComponent 
+		script_source_file="data/entities/animals/boss_spirit/wisp_move.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+</Entity>

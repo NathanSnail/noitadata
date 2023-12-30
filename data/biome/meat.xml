@@ -35,7 +35,7 @@
       material_index="10" 
       material_max="0.66" 
       material_min="0.57" 
-      material_name="rotten_meat" 
+      material_name="meat_static" 
       rare_polka_is_boxed="1" 
       rare_polka_probability="0.2" 
       rare_polka_radius_high="0.65" 

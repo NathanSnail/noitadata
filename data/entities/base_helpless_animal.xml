@@ -210,5 +210,10 @@
 
     <StatusEffectDataComponent>
     </StatusEffectDataComponent>
+	
+	<LuaComponent
+		script_death="data/scripts/animals/helpless_death.lua"
+		>
+	</LuaComponent>
     
 </Entity>

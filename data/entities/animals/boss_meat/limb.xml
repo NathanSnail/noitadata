@@ -1,0 +1,40 @@
+<Entity>
+
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<IKLimbWalkerComponent>
+	</IKLimbWalkerComponent>
+
+	<IKLimbComponent
+		length="80" >
+	</IKLimbComponent>
+
+	<SpriteComponent 
+		image_file="data/entities/animals/boss_meat/limb_a.xml" 
+		offset_x="0"
+		offset_y="2.5"
+		update_transform="0"
+		update_transform_rotation="0"
+		z_index="10" >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		image_file="data/entities/animals/boss_meat/limb_b.xml" 
+		offset_x="0"
+		offset_y="1.5"
+		update_transform="0"
+		update_transform_rotation="0"
+		z_index="10" >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		image_file="data/entities/animals/boss_meat/knee.xml" 
+		offset_x="3.5"
+		offset_y="3.5"
+		update_transform="0"
+		update_transform_rotation="0"
+		z_index="10" >
+	</SpriteComponent>
+
+</Entity>

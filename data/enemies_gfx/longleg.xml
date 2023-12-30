@@ -231,6 +231,18 @@
     </Event>
 
   </RectAnimation>
+  
+  <RectAnimation 
+    frame_count="5" 
+    frame_height="19" 
+    frame_wait="0.12" 
+    frame_width="12" 
+    frames_per_row="8" 
+    loop="0" 
+    name="pet" 
+    pos_x="0" 
+    pos_y="140" >
+  </RectAnimation>
 
 </Sprite>
 

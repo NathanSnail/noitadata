@@ -1,0 +1,133 @@
+<Entity 
+  name="$projectile_default" 
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="0"
+			air_friction="0"
+			mass="0.8"
+			>
+    	</VelocityComponent> 
+	</Base>
+	
+	<HomingComponent
+		target_tag="prey"
+		homing_targeting_coeff="8"
+		detect_distance="350"
+		homing_velocity_multiplier="1.0"
+		>
+	</HomingComponent>
+
+  <ProjectileComponent 
+    _enabled="1" 
+	lob_min="0.8"
+  	lob_max="1.0"
+  	speed_min="100"
+  	speed_max="120"
+    die_on_low_velocity="0"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+	explosion_dont_damage_shooter="1"
+    damage="1.8"
+    on_collision_die="1"
+    lifetime="130" 
+	knockback_force="2.0"
+	>
+    <config_explosion
+      never_cache="1" 
+      camera_shake="4.0" 
+      explosion_radius="30" 
+      explosion_sprite="data/particles/explosion_032.xml" 
+      explosion_sprite_lifetime="0.0" 
+      create_cell_probability="1" 
+      create_cell_material="acid" 
+	  ray_energy="10000"
+      hole_destroy_liquid="1" 
+      hole_enabled="1" 
+	  damage = "1.2"
+      hole_image="data/temp/explosion_hole.png"
+	  explosion_sprite_emissive="0"
+	  explosion_sprite_additive="1"
+      particle_effect="0" 
+      damage_mortals="1"
+	  physics_explosion_power.min="0.4" 
+      physics_explosion_power.max="0.6"
+	  physics_throw_enabled="1"
+      shake_vegetation="1"  
+      sparks_enabled="1" 
+      sparks_count_max="8" 
+      sparks_count_min="4"
+	  spark_material="spark_red"
+      light_fade_time="1.2" 
+	  light_r="155"
+	  light_g="15"
+      light_b="140"
+      stains_enabled="1" 
+      stains_image="data/temp/explosion_stain.png"
+      audio_enabled="0" >
+    </config_explosion>
+  </ProjectileComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/slimeball_huge_red.xml" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="fireball" 
+	emissive="0"
+    additive="0"
+	update_transform_rotation="0"
+	>
+  </SpriteComponent>
+  
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_red"
+    offset.x="-1"
+    offset.y="0"
+    x_pos_offset_min="-8"
+    y_pos_offset_min="-8"
+    x_pos_offset_max="8"
+    y_pos_offset_max="8"
+    x_vel_min="-10"
+    x_vel_max="10"
+    y_vel_min="0"
+    y_vel_max="0"
+    count_min="5"
+    count_max="9"
+    lifetime_min="0.3"
+    lifetime_max="1.6"
+    create_real_particles="0"
+    emit_cosmetic_particles="0"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+  
+  <LightComponent 
+    _enabled="1" 
+    radius="150" 
+    r="180"
+    g="35"
+    b="60">
+  </LightComponent>
+  
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="projectiles/orb_b" >
+	</AudioComponent>
+	
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/animals/boss_meat/orb_big.xml"
+		>
+	</VariableStorageComponent>
+	
+	<HitEffectComponent 
+        effect_hit="LOAD_CHILD_ENTITY"
+        value_string="data/entities/misc/curse_init.xml" >
+	</HitEffectComponent >
+</Entity>
