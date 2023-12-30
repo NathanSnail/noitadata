@@ -104,6 +104,13 @@ g_small_enemies =
 		entity 	= "data/entities/animals/ethereal_being.xml",
 		ngpluslevel = 1,
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/weakspirit.xml",
+		ngpluslevel = 2,
+	},
 }
 
 g_items =

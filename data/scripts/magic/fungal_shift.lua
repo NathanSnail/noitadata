@@ -67,6 +67,19 @@ log_messages =
 	"$log_reality_mutation_05",
 }
 
+greedy_materials = 
+{ 
+	"brass", 
+	"silver", 
+	"radioactive_liquid", 
+	"pea_soup", 
+	"acid_gas", 
+	"poo", 
+	"mammi", 
+	"rotten_meat_radioactive", 
+	"vomit", 
+}
+
 
 -- DEBUG: validate data
 for i,it in ipairs(materials_from) do
@@ -133,7 +146,7 @@ function fungal_shift( entity, x, y, debug_no_limits )
 		local to = pick_random_from_table_weighted( rnd, materials_to )
 		local held_material = get_held_item_material( entity )
 
-		-- if a potion is equipped, randomly use main material from potion as one of the materials
+		-- if a potion or pouch is equipped, randomly use main material from it as one of the materials
 		if held_material > 0 and random_nexti( rnd, 1, 100 ) <= 75 then
 			if random_nexti( rnd, 1, 100 ) <= 50 then
 				from = {}
@@ -141,6 +154,10 @@ function fungal_shift( entity, x, y, debug_no_limits )
 			else
 				to = {}
 				to.material = CellFactory_GetName(held_material)
+				-- heh he
+				if to.material == "gold" and random_nexti( rnd, 1, 1000 ) ~= 1 then 
+					to.material = random_from_array( greedy_materials )
+				end
 			end
 		end
 

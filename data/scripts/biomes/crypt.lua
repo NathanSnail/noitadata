@@ -137,6 +137,7 @@ g_small_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/weakspirit.xml",
+		ngpluslevel = 1,
 	},
 }
 

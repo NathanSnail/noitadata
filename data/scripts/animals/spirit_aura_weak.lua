@@ -4,27 +4,38 @@ local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
 local r = 220
 
-local targets = EntityGetInRadiusWithTag( x, y, r, "hittable" )
+local targets = EntityGetInRadiusWithTag( x, y, r, "homing_target" )
+local targets2 = EntityGetInRadiusWithTag( x, y, r, "player_unit" )
+local done = {}
+
+for i,v in ipairs(targets2) do
+	table.insert(targets, v)
+end
 
 for i,v in ipairs( targets ) do
 	if ( v ~= entity_id ) then
 		local c = EntityGetAllChildren( v )
+		local root_id = EntityGetRootEntity( v )
 		local valid = true
 		
-		if ( c ~= nil ) then
-			for a,b in ipairs( c ) do
-				local comps = EntityGetComponent( b, "GameEffectComponent", "spirit_weakness" )
-				
-				if ( comps ~= nil ) then
-					valid = false
-					break
+		if ( done[root_id] == nil ) then
+			if ( c ~= nil ) then
+				for a,b in ipairs( c ) do
+					local comps = EntityGetComponent( b, "GameEffectComponent", "spirit_weakness" )
+					
+					if ( comps ~= nil ) then
+						valid = false
+						break
+					end
 				end
 			end
-		end
-		
-		if valid then
-			local eid = EntityLoad( "data/entities/misc/effect_spirit_weakness.xml", x, y )
-			EntityAddChild( v, eid )
+			
+			if valid then
+				local eid = EntityLoad( "data/entities/misc/effect_spirit_weakness.xml", x, y )
+				EntityAddChild( v, eid )
+				
+				done[v] = 1
+			end
 		end
 	end
 end

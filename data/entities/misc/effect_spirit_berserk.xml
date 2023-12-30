@@ -44,5 +44,15 @@
 		randomize_velocity.max_y="5"
 		>
 	  </SpriteParticleEmitterComponent>
+	
+	<UIIconComponent
+		name="$status_berserk"
+		description="$statusdesc_berserk"
+		icon_sprite_file="data/ui_gfx/status_indicators/berserk.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
 
 </Entity>

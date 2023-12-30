@@ -15,6 +15,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 			EntitySetComponentsWithTagEnabled( v, "effect_no_heal_in_meat_biome", false )
 		end
 		
-		GamePrintImportant( "$log_greed_curse_away", "" )
+		GamePrintImportant( "$log_boss_meat_death", "$logdesc_boss_meat_death" )
 	end
 end

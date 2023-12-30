@@ -128,6 +128,13 @@ g_big_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/buildings/ghost_crystal.xml"
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/weakspirit.xml",
+		ngpluslevel = 2,
+	},
 }
 
 ------------ ITEMS ------------------------------------------------------------

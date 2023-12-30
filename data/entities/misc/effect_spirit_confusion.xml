@@ -40,5 +40,15 @@
 		randomize_position.max_y="4"
 		>
     </SpriteParticleEmitterComponent>
+	
+	<UIIconComponent
+		name="$status_confusion"
+		description="$statusdesc_confusion"
+		icon_sprite_file="data/ui_gfx/status_indicators/confusion.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
 
 </Entity>

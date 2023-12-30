@@ -47,5 +47,15 @@
 		randomize_velocity.max_y="8"
 		>
 	</SpriteParticleEmitterComponent>
+	
+	<UIIconComponent
+		name="$status_weakness"
+		description="$statusdesc_weakness"
+		icon_sprite_file="data/ui_gfx/status_indicators/weakness.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
 
 </Entity>

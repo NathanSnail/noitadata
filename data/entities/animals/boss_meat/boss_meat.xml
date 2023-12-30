@@ -146,7 +146,7 @@
 
 	<DamageModelComponent 
 		hp="40" 
-		wait_for_kill_flag_on_death="1"
+		wait_for_kill_flag_on_death="0"
 		air_needed="0" 
 		falling_damages="0" 
 		fire_damage_amount="0.2" 	 

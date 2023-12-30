@@ -1718,7 +1718,8 @@ actions =
 		spawn_probability                 = "0.4,0.3,0.3,0.3", -- BULLET
 		price = 200,
 		mana = 20,
-		--max_uses = -1,
+		max_uses = 20,
+		never_unlimited = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/healhurt.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 8

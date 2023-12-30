@@ -123,6 +123,16 @@
 		</GameEffectComponent >
 	</Entity>
 	
+	<Entity>
+		<InheritTransformComponent />
+		
+		<GameEffectComponent 
+			effect="KNOCKBACK_IMMUNITY"
+			frames="-1"
+		>
+		</GameEffectComponent >
+	</Entity>
+	
 	<LuaComponent
 		script_source_file="data/scripts/buildings/wallmouth_yawn.lua"
 		execute_every_n_frame="60"
