@@ -57,6 +57,7 @@
 		ragdollify_child_entity_sprites="1"
 		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_green_$[1-3].xml"
 		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_green_$[1-3].xml"
+		wait_for_kill_flag_on_death="1"
 		>
 		<damage_multipliers
 			melee="0.0"

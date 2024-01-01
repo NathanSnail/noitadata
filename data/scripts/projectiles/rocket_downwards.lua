@@ -17,7 +17,7 @@ if ( vel_y > 10 ) then
 		local shot_vel_x = values[1]
 		local shot_vel_y = values[2]
 
-		shoot_projectile( entity_id, "data/entities/projectiles/deck/rocket_downwards.xml", pos_x + shot_vel_x * 0.05, pos_y + shot_vel_y * 0.05, shot_vel_x, shot_vel_y, false )
+		shoot_projectile_from_projectile( entity_id, "data/entities/projectiles/deck/rocket_downwards.xml", pos_x + shot_vel_x * 0.05, pos_y + shot_vel_y * 0.05, shot_vel_x, shot_vel_y, false )
 	end
 	
 	EntityKill( entity_id )

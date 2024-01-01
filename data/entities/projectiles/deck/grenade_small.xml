@@ -36,6 +36,8 @@
     shoot_light_flash_b="40"
 	knockback_force="1.0"
 	physics_impulse_coeff="3000"
+	collide_with_shooter_frames="1"
+	friendly_fire="1"
 	>
 	<damage_by_type
 		fire="0.3"
