@@ -12,7 +12,6 @@
         is_predator="0" >
     </GenomeDataComponent>
 
-
     <DamageModelComponent 
         air_in_lungs="5" 
         air_in_lungs_max="5" 
@@ -49,7 +48,6 @@
         aabb_min_y="-3"
         >
     </HitboxComponent>
-
 
     <CharacterDataComponent
         buoyancy_check_offset_y="0"
@@ -90,7 +88,6 @@
         >
     </ControlsComponent>
 
-
     <SpriteAnimatorComponent>
     </SpriteAnimatorComponent>
 
@@ -108,5 +105,7 @@
         distance="2000"
         >
     </CameraBoundComponent>
+
+    <GameStatsComponent />
 
 </Entity>
