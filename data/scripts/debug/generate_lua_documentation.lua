@@ -97,6 +97,7 @@ local function split_and_classify(s)
 	-- store description
 	if description_begin_idx and description_end_idx then
 		t.description = string.sub(s, description_begin_idx+1, description_end_idx-1)
+		t.description = t.description:gsub("\\n", "</br></br>")
 	else
 		t.description = ""
 	end

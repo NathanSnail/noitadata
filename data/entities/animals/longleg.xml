@@ -69,7 +69,7 @@
 	</AudioComponent>
 	
 	<InteractableComponent
-		_tags="enabled_in_world,longleg_love"
+		_tags="enabled_in_world,enabled_if_charmed"
 		_enabled="0"
 		name="longleg_love"
 		ui_text="$ui_longleg_love"

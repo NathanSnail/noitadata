@@ -24,7 +24,7 @@ function interacting(entity_who_interacted, entity_interacted, interactable_name
 	
 	if ( rnd ~= 13 ) then
 		GamePlayAnimation( entity_interacted, "pet", 99, "stand", 0 )
-		EntitySetComponentsWithTagEnabled( entity_interacted, "longleg_love", false )
+		EntitySetComponentsWithTagEnabled( entity_interacted, "enabled_if_charmed", false )
 		
 		GamePrint( "$ui_longleg_love_msg1" )
 	else

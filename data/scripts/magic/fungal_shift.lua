@@ -81,17 +81,6 @@ greedy_materials =
 }
 
 
--- DEBUG: validate data
-for i,it in ipairs(materials_from) do
-	for i2,mat in ipairs(it.materials) do
-		CellFactory_GetType( mat ) -- will spam errors if not a material name
-	end
-end
-for i,it in ipairs(materials_to) do
-	CellFactory_GetType( it.material ) -- will spam errors if not a material name
-end
-
-
 function get_held_item_material( entity_id )
 	local children = EntityGetAllChildren( entity_id )
 	if ( children == nil ) then 
@@ -110,8 +99,17 @@ function get_held_item_material( entity_id )
 end
 
 -- TODO: pick one of the materials from cape
--- TODO: pick one of the materials from a potion?
 function fungal_shift( entity, x, y, debug_no_limits )
+	-- DEBUG: validate data
+	--[[for i,it in ipairs(materials_from) do
+		for i2,mat in ipairs(it.materials) do
+			CellFactory_GetType( mat ) -- will spam errors if not a material name
+		end
+	end
+	for i,it in ipairs(materials_to) do
+		CellFactory_GetType( it.material ) -- will spam errors if not a material name
+	end]]--
+
 	local parent = EntityGetParent( entity )
 	if parent ~= 0 then
 		entity = parent

@@ -622,6 +622,20 @@ function debug_print_table( table_to_print, table_depth, parent_table )
 	end
 end
 
+
+-----------------------------------------------------------------------------------------
+
+function debug_print_entity( entity )
+	local comps = EntityGetAllComponents( entity )
+	for i,comp in pairs(comps) do
+		print(ComponentGetTypeName(comp) .. " ---------------------------")
+		print("Enabled " .. tostring(ComponentGetIsEnabled(comp)))
+		for name,value in pairs(ComponentGetMembers(comp)) do
+			print(name .. " " .. tostring(value))
+		end
+	end
+end
+
 -----------------------------------------------------------------------------------------
 
 function get_direction( x1, y1, x2, y2 )
@@ -786,6 +800,38 @@ function vec_rotate(x, y, angle)
 	local py = sa * x + ca * y
 	return px,py
 end
+
+-----------------------------------------------------------------------------------------
+
+function color_abgr_split(abgr_int)
+    local r = bit.band(abgr_int, 0x000000FF)
+    local g = bit.band(abgr_int, 0x0000FF00)
+    local b = bit.band(abgr_int, 0x00FF0000)
+    local a = bit.band(abgr_int, 0xFF000000)
+
+    g = bit.rshift(g, 8)
+    b = bit.rshift(b, 16)
+    a = bit.rshift(a, 24)
+
+    return r,g,b,a
+end
+
+-----------------------------------------------------------------------------------------
+
+function color_abgr_merge(r, g, b, a)
+    local r = bit.band(r, 0x000000FF)
+    local g = bit.band(g, 0x000000FF)
+    local b = bit.band(b, 0x000000FF)
+    local a = bit.band(a, 0x000000FF)
+
+    g = bit.lshift(g, 8)
+    b = bit.lshift(b, 16)
+    a = bit.lshift(a, 24)
+
+    return bit.bor(r,g,b,a)
+end
+
+-----------------------------------------------------------------------------------------
 
 teststring = "abcdefghijklmnopqrstuvwxyzdsice_trual_fgoipucrs_sm_t_theme"
 
@@ -1009,4 +1055,22 @@ GUI_RECT_ANIMATION_PLAYBACK = {
 	PlayToEndAndHide = 0,
 	PlayToEndAndPause = 1,
 	Loop = 2,
+}
+
+
+-- volatile: must be kept in sync with lua_api.cpp
+-- for GameSetPostFxTextureParameter()
+
+TEXTURE_WRAPPING_MODE = {
+	CLAMP = 0,
+	CLAMP_TO_EDGE = 1,
+	CLAMP_TO_BORDER = 2,
+	REPEAT = 3,
+	MIRRORED_REPEAT = 4,
+}
+
+TEXTURE_FILTERING_MODE = {
+	UNDEFINED = 0, -- if "pixel art anti-aliasing" option is turned on, will be set to BILINEAR, otherwise NEAREST
+	BILINEAR = 1,
+	NEAREST = 2, -- nearest neighbour
 }

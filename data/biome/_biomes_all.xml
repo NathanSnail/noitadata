@@ -1033,6 +1033,12 @@
 		color="ff572828" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/sky_light_injector.xml" 
+		height_index="0"
+		color="fffe0000" >
+	</Biome>
+
 	<!-- static tile example -->
 	<!--<Biome 
 		biome_filename="data/biome/static_tile_test_00.xml" 

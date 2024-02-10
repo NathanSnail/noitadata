@@ -145,4 +145,4 @@ and/or registered trademarks of Valve Corporation in the U.S. and/or other count
 TWITCH, the TWITCH Logo, the Glitch Logo, and/or TWITCHTV are trademarks of Twitch Interactive, Inc. or its affiliates.
 Please see licenses/Attributions.txt for Creative Commons attribution list.
  
-© Nolla Games Oy 2019 - 2021
+© Nolla Games Oy 2019 - 2024
