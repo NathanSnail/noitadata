@@ -3,3 +3,5 @@ data/audio/Desktop/music.bank
 data/audio/Desktop/music01.bank
 data/audio/Desktop/music11.bank
 data/generated/material_icons
+*.un~
+*~
