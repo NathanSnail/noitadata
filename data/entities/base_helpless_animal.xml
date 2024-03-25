@@ -1,6 +1,5 @@
 <Entity tags="mortal,hittable,helpless_animal,homing_target,teleportable_NOT" >
     
-	<LuaComponent script_damage_received="mods/testas/files/go.lua"></LuaComponent>
     <_Transform 
         rotation="0" 
         scale.x="1" 

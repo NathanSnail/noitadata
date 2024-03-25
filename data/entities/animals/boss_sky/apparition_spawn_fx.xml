@@ -1,0 +1,50 @@
+<Entity tags="miniboss,music_energy_50">
+
+  	<ParticleEmitterComponent 
+		emitted_material_name="spark_blue"
+		gravity.y="0.0"
+		offset.y="0"
+		lifetime_min="1"
+		lifetime_max="2"
+		count_min="2"
+		count_max="2"
+		render_on_grid="1"
+		collide_with_grid="0"
+		collide_with_gas_and_fire="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		image_animation_file="data/entities/animals/boss_sky/apparition_spawn_fx_emitter.png" 
+		image_animation_speed="1"
+		image_animation_loop="0"
+		image_animation_raytrace_from_center="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LifetimeComponent
+		lifetime="160" >
+	</LifetimeComponent>
+
+	<LuaComponent 
+		script_source_file="data/entities/animals/boss_sky/boss_sky.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+	></LuaComponent>
+
+	<AudioLoopComponent
+		_enabled="1"
+		file="data/audio/Desktop/misc.bank"
+		event_name="misc/runestone_loop"
+		calculate_material_lowpass="0"
+		auto_play="1"
+	></AudioLoopComponent>
+
+</Entity>
+

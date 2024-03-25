@@ -197,6 +197,11 @@ function weather_update()
 end
 
 
+function OnMagicNumbersAndWorldSeedInitialized()
+	-- this is the last point where many Mod* lua API functions are available
+	dofile_once( "data/biome_impl/static_tile/biome_gen_labyrinth.lua" )
+end
+
 function OnBiomeConfigLoaded()
 	init_biome_modifiers()
 end
@@ -230,4 +235,3 @@ function OnCountSecrets()
 
 	return total,found
 end
-

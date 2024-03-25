@@ -1,0 +1,32 @@
+<Entity>
+
+	<InheritTransformComponent
+    	_tags="enabled_in_world,enabled_in_hand">
+	</InheritTransformComponent>
+
+	<IKLimbComponent
+    	_tags="enabled_in_world,enabled_in_hand"
+		length="12" >
+	</IKLimbComponent>
+
+	<SpriteComponent 
+    	_tags="enabled_in_world,enabled_in_hand"
+		image_file="data/entities/animals/lukki/lukki_feet/lukki_limb_tiny_dark.png" 
+		z_index="1.1"
+		offset_x="0"
+		offset_y="1"
+		update_transform="0"
+		update_transform_rotation="0" >
+	</SpriteComponent>
+
+	<SpriteComponent 
+    	_tags="enabled_in_world,enabled_in_hand"
+		image_file="data/entities/animals/lukki/lukki_feet/lukki_limb_tiny_dark.png" 
+		z_index="1.1"
+		offset_x="0"
+		offset_y="1"
+		update_transform="0"
+		update_transform_rotation="0" >
+	</SpriteComponent>
+
+</Entity>

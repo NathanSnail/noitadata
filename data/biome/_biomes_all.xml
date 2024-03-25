@@ -1038,12 +1038,41 @@
 		height_index="0"
 		color="fffe0000" >
 	</Biome>
-
-	<!-- static tile example -->
-	<!--<Biome 
-		biome_filename="data/biome/static_tile_test_00.xml" 
-		height_index="0"
-		color="ffff0000" >
-	</Biome>-->
 	
+	<Biome
+		biome_filename="data/biome_impl/static_tile/biome_labyrinth.xml"
+		height_index="0"
+		color="ffb60000" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome_impl/static_tile/biome_watchtower.xml" 
+		height_index="0"
+		color="ffb70000" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome_impl/static_tile/biome_potion_mimics.xml" 
+		height_index="0"
+		color="ffff00fe" >
+	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome_impl/static_tile/biome_darkness.xml" 
+		height_index="0"
+		color="ffff00fd" >
+	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome_impl/static_tile/biome_boss_sky.xml" 
+		height_index="0"
+		color="ffff00fc" >
+	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome_impl/static_tile/biome_barren.xml" 
+		height_index="0"
+		color="ffff00fb" >
+	</Biome>
+
 </BiomesToLoad>

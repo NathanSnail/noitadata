@@ -1,3 +1,6 @@
+dofile_once("data/scripts/gun/procedural/gun_action_utils.lua")
+dofile_once("data/scripts/lib/utilities.lua")
+
 actions =
 {
 	-- projectiles --
@@ -3904,13 +3907,33 @@ actions =
 		related_projectiles	= {"data/entities/projectiles/deck/touch_piss.xml"},
 		spawn_requires_flag = "card_unlocked_piss",
 		type 		= ACTION_TYPE_MATERIAL,
-		spawn_level                       = "10", -- TOUCH_ALCOHOL
-		spawn_probability                 = "0", -- TOUCH_ALCOHOL
+		spawn_level                       = "10", -- TOUCH_PISS
+		spawn_probability                 = "0", -- TOUCH_PISS
 		price = 360,
 		mana = 190,
 		max_uses    = 4, 
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/touch_piss.xml")
+		end,
+	},
+	{
+		id          = "TOUCH_GRASS",
+		name 		= "$action_touch_grass",
+		description = "$actiondesc_touch_grass",
+		sprite 		= "data/ui_gfx/gun_actions/touch_grass.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rocket_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/touch_grass.xml"},
+		spawn_requires_flag = "card_unlocked_touch_grass",
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "1,2,3,4,5,6,7,10", -- TOUCH_GRASS
+		spawn_probability                 = "0,0,0,0,0.1,0.1,0.1,0.2", -- TOUCH_GRASS
+		spawn_requires_flag = "card_unlocked_touch_grass",
+		price = 360,
+		mana = 190,
+		max_uses    = 4, 
+		custom_xml_file = "data/entities/misc/custom_cards/touch_grass.xml",
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/touch_grass.xml")
 		end,
 	},
 	{
@@ -6861,6 +6884,25 @@ actions =
 		max_uses = 3,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/sea_acid_gas.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+	{
+		id          = "SEA_MIMIC",
+		name 		= "$action_sea_mimic",
+		description = "$actiondesc_sea_mimic",
+		sprite 		= "data/ui_gfx/gun_actions/sea_mimic.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/sea_mimic.xml"},
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "0,4,5,6,10", -- SEA_MIMIC
+		spawn_probability                 = "0.05,0.05,0.1,0.1,0.2", -- SEA_MIMIC
+		spawn_requires_flag = "card_unlocked_sea_mimic",
+		price = 350,
+		mana = 140,
+		max_uses = 3,
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/sea_mimic.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
@@ -11030,5 +11072,52 @@ actions =
 		end,
 
 	},
-}
+	{
+		id          = "CESSATION",
+		name 		= "$action_cessation",
+		description = "$actiondesc_cessation",
+		sprite 		= "data/ui_gfx/gun_actions/cessation.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/cessation_unidentified.png",
+		type 		= ACTION_TYPE_OTHER,
+		spawn_level                       = "5,6,10",
+		spawn_probability                 = "0.1,0.2,1",
+		spawn_requires_flag = "card_unlocked_cessation",
+		price = 10,
+		mana = 0,
+		--max_uses = 10,
+		--custom_xml_file = "data/entities/misc/custom_cards/rainbow_trail.xml",
+		action = function()
+			c.fire_rate_wait = c.fire_rate_wait + 600
+			current_reload_time = current_reload_time + 600
 
+			if reflecting then return end
+
+			--------------
+			local frame = GameGetFrameNum()
+			local lifetime = 20 + c.lifetime_add
+
+			local caster_entity = GetUpdatedEntityID()
+			local wand_entity = find_the_wand_held( caster_entity )
+
+			if wand_entity then
+				local ability = EntityGetFirstComponentIncludingDisabled( wand_entity, "AbilityComponent" )
+				if ability ~= NULL_ENTITY then
+					ComponentSetValue2( ability, "mNextFrameUsable", frame + lifetime + c.fire_rate_wait )
+					ComponentSetValue2( ability, "mCastDelayStartFrame", frame + lifetime )
+				end
+			end
+
+			local inventory = EntityGetFirstComponentIncludingDisabled( caster_entity, "InventoryGuiComponent" )
+			if inventory ~= NULL_ENTITY then
+				ComponentSetValue2( inventory, "mDisplayFireRateWaitBar", true )
+			end
+
+			StartReload( current_reload_time )
+
+			local effect_comp,effect_entity = GetGameEffectLoadTo( caster_entity, "POLYMORPH_CESSATION", false )
+			if effect_comp ~= NULL_ENTITY then
+				ComponentSetValue2( effect_comp, "frames", lifetime )
+			end
+		end,
+	},
+}

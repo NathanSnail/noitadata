@@ -5694,6 +5694,44 @@
   
   <CellDataChild
   	_parent="water"
+	tags="[liquid],[mimic_liquid]"
+	name="mimic_liquid"
+	ui_name="$mat_mimic_liquid"
+	wang_color="ffa2332b"
+	density="6"
+	gfx_glow="255"
+	show_in_creative_mode="1"
+	audio_materialaudio_type="MAGICAL" 
+	>
+	<Graphics 
+	texture_file="data/materials_gfx/mimic_liquid.png" 
+	color="88E8BD5C"
+	fire_colors_index="2" >
+    </Graphics>
+	<ParticleEffect
+		vel.y="-14.28"
+		vel_random.min_x="-0.285"
+		vel_random.max_x="0.285"
+		vel_random.min_y="-11.43"
+		vel_random.max_y="11.43"
+		lifetime.min="0"
+		lifetime.max="5"
+		gravity.y="0"
+		render_on_grid="1"
+		airflow_force="0.3146"
+		airflow_scale="-0.08"
+		probability="0.018"
+		count.min="0"
+	></ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="water"
 	tags="[liquid],[magic]"
 	name="just_death"
 	ui_name="$mat_magic_liquid_death"
@@ -5920,6 +5958,85 @@
 		</Stains>
 		<Ingestion>
 			<StatusEffect type="INGESTION_DRUNK" amount="0.3" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="beer"
+	ui_name="$mat_beer"
+  	tags="[liquid],[water],[impure],[liquid_common]"
+	density="3.5"
+	cell_type="liquid"
+	wang_color="90d0ffe6"
+	liquid_gravity="1.2"
+	liquid_sand="0"
+	liquid_stains="1"
+	liquid_stains_self="0"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="4Fbd7e05"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="WET" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="INGESTION_DRUNK" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="milk"
+	ui_name="$mat_milk"
+  	tags="[liquid],[water],[impure],[liquid_common]"
+	density="3.5"
+	cell_type="liquid"
+	wang_color="90d0ffe5"
+	liquid_gravity="1.2"
+	liquid_sand="0"
+	liquid_stains="1"
+	liquid_stains_self="0"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="fffff6e5"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="WET" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="molut"
+	ui_name="$mat_molut"
+  	tags="[liquid],[water],[impure],[liquid_common]"
+	density="3.5"
+	cell_type="liquid"
+	wang_color="90d0ffe4"
+	liquid_gravity="1.2"
+	liquid_sand="0"
+	liquid_stains="1"
+	liquid_stains_self="0"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="ffb4a485"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="WET" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="INGESTION_DRUNK" amount="0.075" />
+			<StatusEffect type="FOOD_POISONING" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>
@@ -10748,6 +10865,78 @@
   </CellData>
 
   <CellData 
+	name="grass_holy"  
+	ui_name="$mat_grass_holy"
+  	tags="[plant],[requires_air],[corrodible],[burnable],[alchemy]"
+	burnable="1"  
+	density="6"  
+	cell_type="liquid" 
+	wang_color="ff3abb40"  
+	generates_smoke="20"  
+	liquid_gravity="1.0"  
+	liquid_sand="1"  
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="50" 
+	autoignition_temperature="85" 
+	platform_type="0"
+	hp="200" 
+	fire_hp="100"
+	gfx_glow="500"
+	audio_physics_material_wall="organicsoft"
+	audio_physics_material_solid="organicsoft"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	> 
+    <Graphics 
+	texture_file="data/materials_gfx/grass.png" 
+	is_grass="1"
+	is_grass_hashed="1"
+	color="ff33b828" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FARTS" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="grass_darker"  
+	ui_name="$mat_grass"
+  	tags="[plant],[requires_air],[corrodible],[burnable],[alchemy],[impure]"
+	burnable="1"  
+	density="6"  
+	cell_type="liquid" 
+	wang_color="ff3abb41"  
+	generates_smoke="20"  
+	liquid_gravity="1.0"  
+	liquid_sand="1"  
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="50" 
+	autoignition_temperature="85" 
+	platform_type="0"
+	hp="200" 
+	fire_hp="100"
+	audio_physics_material_wall="organicsoft"
+	audio_physics_material_solid="organicsoft"
+	show_in_creative_mode="1"
+	> 
+    <Graphics 
+		texture_file="data/materials_gfx/grass_dark.png" 
+		is_grass="1"
+		is_grass_hashed="1"
+		color="ff33b828" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FARTS" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
 	name="grass_ice"  
 	_parent="grass"
 	ui_name="$mat_ice"
@@ -11119,6 +11308,36 @@
     </Graphics>
   </CellData>
 
+
+  <CellData 
+	name="plant_material_dark"
+	ui_name="$mat_plant_material"	
+  	tags="[plant],[requires_air],[corrodible],[burnable]"
+	burnable="1"  
+	density="6"  
+	cell_type="liquid" 
+	wang_color="ff33b839"  
+	generates_smoke="20"  
+	liquid_gravity="0.8"  
+	liquid_sand="1"  
+	liquid_viscosity="101"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="50" 
+	autoignition_temperature="85" 
+	platform_type="0"
+	vegetation_full_lifetime_growth="700"
+    vegetation_sprite="data/vegetation/grass_dark_patch_0$[1-3].xml" 
+    vegetation_random_flip_x_scale="1"
+	hp="200"
+	show_in_creative_mode="1"
+	> 
+    <Graphics 
+	texture_file="data/materials_gfx/grass_dark.png" 
+	color="ff33b828" >
+    </Graphics>
+  </CellData>
+  
   <CellData 
 	name="ceiling_plant_material"  
 	ui_name="$mat_ceiling_plant_material"
@@ -13143,6 +13362,25 @@
 	wang_color="ff2d2dbc"
 	audio_physics_material_wall="rock"
 	audio_physics_material_solid="rock" >
+  	<Graphics
+		texture_file="data/materials_gfx/rock.png"
+		color="ff2d2dac" >
+    </Graphics>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="aluminium"
+  	_inherit_reactions="1"
+	tags="[box2d],[solid],[earth]"
+  	name="rock_box2d_nohit_heavy"
+	ui_name="$mat_rock_box2d_nohit"
+	electrical_conductivity="0"
+	solid_friction="1"
+	hp="1000" 
+	wang_color="ff2d2dbd"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	audio_size_multiplier="5" >
   	<Graphics
 		texture_file="data/materials_gfx/rock.png"
 		color="ff2d2dac" >
@@ -15646,6 +15884,11 @@
 	>
   </Reaction>
   
+  <Reaction probability="100"
+	input_cell1="beer" 			input_cell2="milk"
+	output_cell1="molut" 		output_cell2="molut"  
+	>
+  </Reaction>
   <!-- [vapour] reactions -->
   
   <Reaction probability="30"
@@ -16526,6 +16769,12 @@
 		>
 	</Reaction>
 	
+	<Reaction probability="100"
+		input_cell1="mimic_liquid" input_cell2="[any_liquid]"
+		output_cell1="[any_liquid]" output_cell2="[any_liquid]"
+		>
+	</Reaction>
+	
 	<Reaction probability="50"
 		input_cell1="meat" input_cell2="poison"
 		output_cell1="rotten_meat" output_cell2="poison"
@@ -16711,5 +16960,22 @@
 		entity="data/entities/misc/just_death_effect.xml"
 		>
 	</Reaction>
+
+	<Reaction probability="80"
+		input_cell1="grass" input_cell2="magic_liquid_hp_regeneration"
+		output_cell1="grass_holy" output_cell2="air"
+		blob_radius1="4" 
+		blob_restrict_to_input_material1="1" 
+		>
+	</Reaction>
+
+	<Reaction probability="80"
+		input_cell1="grass_holy" input_cell2="urine"
+		output_cell1="grass" output_cell2="magic_gas_hp_regeneration" 
+		blob_radius1="4" 
+		blob_restrict_to_input_material1="1" 
+		>
+	</Reaction>
+	
 
 </Materials>

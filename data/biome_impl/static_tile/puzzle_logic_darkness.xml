@@ -1,0 +1,18 @@
+<Entity>
+  <MaterialAreaCheckerComponent
+    area_aabb.min_x="-110" 
+    area_aabb.max_x="110" 
+    area_aabb.min_y="-10"   
+    area_aabb.max_y="120" 
+    update_every_x_frame="5"
+    material="material_darkness"
+    look_for_failure="0"
+    kill_after_message="1"
+    count_min="14000"
+  ></MaterialAreaCheckerComponent>
+
+  <LuaComponent
+    script_material_area_checker_success="data/biome_impl/static_tile/puzzle_logic_darkness.lua">
+  </LuaComponent>
+
+</Entity>

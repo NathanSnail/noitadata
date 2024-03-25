@@ -112,6 +112,15 @@ status_effects =
 		is_harmful=true,
 	},
 	{
+		id="POLYMORPH_CESSATION",
+		ui_name="$status_polymorph_random",
+		ui_description="$statusdesc_polymorph_random",
+		ui_icon="data/ui_gfx/status_indicators/polymorph_random.png",
+		remove_cells_that_cause_when_activated=true,
+		effect_entity="data/entities/misc/effect_polymorph_cessation.xml",
+		is_harmful=true,
+	},
+	{
 		id="BERSERK",
 		ui_name="$status_berserk",
 		ui_description="$statusdesc_berserk",

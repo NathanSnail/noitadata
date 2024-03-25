@@ -1,0 +1,60 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml"> 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/touch_grass.png" 
+		></SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="TOUCH_GRASS" 
+		></ItemActionComponent>
+	</Base>
+	
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" >
+	  	<Transform 
+			position.x="8" 
+			position.y="0"
+		></Transform>
+	</InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_hand,enabled_in_world"
+		emitted_material_name="spark_green"
+		offset.x="0"
+		offset.y="0"
+		gravity.y="10"
+		x_pos_offset_min="-3"
+		x_pos_offset_max="3"
+		y_pos_offset_min="1"
+		y_pos_offset_max="-1"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-20"
+		y_vel_max="-10"
+		count_min="1"
+		count_max="2"
+		lifetime_min="0.4"
+		lifetime_max="1.5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="12"
+		is_emitting="1" 
+	></ParticleEmitterComponent>
+
+	<VariableStorageComponent
+		_enabled="0"
+		_tags="enabled_in_hand"
+	></VariableStorageComponent>
+	
+	<LuaComponent 
+		_tags="enabled_in_hand,enabled_in_world"
+		script_source_file="data/scripts/projectiles/touch_grass.lua"
+		execute_every_n_frame="20"
+	></LuaComponent>
+  
+</Entity>

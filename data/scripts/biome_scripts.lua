@@ -84,7 +84,14 @@ function spawn_wands(x, y)
 end
 
 function spawn_potions( x, y )
-	spawn_from_list( "potion_spawnlist", x, y )
+	SetRandomSeed( x, y )
+	local rnd = Random( 1, 1000 )
+	if (rnd <= 995) or (y < 512 * 3) then
+		spawn_from_list( "potion_spawnlist", x, y )
+	else
+		EntityLoad( "data/entities/items/pickup/potion_mimic.xml", x, y)
+	end
+
 end
 
 function spawn_ghostlamp(x, y)

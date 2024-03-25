@@ -1,0 +1,14 @@
+<Entity>
+
+	<LuaComponent
+		script_source_file="data/biome_impl/static_tile/potion_mimics_indicator.lua"
+		execute_every_n_frame="2"
+	></LuaComponent>
+
+  	<SpriteComponent
+		offset_x="4"
+		offset_y="4"
+		image_file="data/biome_impl/static_tile/temples-assets/potion_mimic_icon.png"
+	></SpriteComponent>
+
+</Entity>

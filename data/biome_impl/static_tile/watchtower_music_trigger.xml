@@ -1,0 +1,14 @@
+<Entity>
+    <CollisionTriggerComponent
+      width="80"
+      height="50" 
+      radius="80"
+      required_tag="player_unit" >
+  	</CollisionTriggerComponent>
+
+    <LuaComponent
+      script_collision_trigger_hit="data/biome_impl/static_tile/watchtower_music_trigger.lua"
+      execute_every_n_frame="-1" >
+    </LuaComponent>
+</Entity>
+

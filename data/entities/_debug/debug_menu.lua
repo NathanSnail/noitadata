@@ -4,6 +4,7 @@ dofile( "data/scripts/perks/perk.lua" )
 dofile( "data/scripts/streaming_integration/event_list.lua" )
 dofile( "data/scripts/biome_modifiers.lua" )
 dofile( "data/scripts/magic/fungal_shift.lua" )
+dofile( "data/scripts/newgame_plus.lua")
 dofile_once("data/scripts/streaming_integration/event_utilities.lua" )
 
 local gui_frame_fn = nil
@@ -229,14 +230,20 @@ function gui_fn_teleport_to_location()
 		{ui_name = "dark altar", 		x=3840, y=15590, },
 		{ui_name = "ending #1", 		x=6241, y=15130, },
 		{ui_name = "---" },
-		{ui_name ="orb 2", 				x=-10010, y=2827, },
-		{ui_name ="orb 4", 				x=9955, y=2819, },
-		{ui_name ="orb 5", 				x=-4375, y=3867, },
-		{ui_name ="orb 6", 				x=-4859, y=8973, },
-		{ui_name ="orb 7", 				x=4343, y=814, },
-		{ui_name ="orb 8", 				x=-255, y=16147, },
-		{ui_name ="orb 9", 				x=-8957, y=14609, },
-		{ui_name ="orb 10", 			x=10476, y=16148, },
+		{ui_name = "orb 2", 			x=-10010, y=2827, },
+		{ui_name = "orb 4", 			x=9955, y=2819, },
+		{ui_name = "orb 5", 			x=-4375, y=3867, },
+		{ui_name = "orb 6", 			x=-4859, y=8973, },
+		{ui_name = "orb 7", 			x=4343, y=814, },
+		{ui_name = "orb 8", 			x=-255, y=16147, },
+		{ui_name = "orb 9", 			x=-8957, y=14609, },
+		{ui_name = "orb 10", 			x=10476, y=16148, },
+		{ui_name = "---" },
+		{ui_name = "sky temples - barren", 	x=-5520, y=-5260, },
+		{ui_name = "sky temples - mimics", 	x=-2000, y=-5300, },
+		{ui_name = "sky temples - darkness",x=2700, y=-5000, },
+		{ui_name = "sky temples - boss", 	x=7350, y=-5000, },
+		{ui_name = "watchtower", 		x=13800, y=-50, },
 
 		-- #pyramid
 		-- 1, floating island
@@ -260,6 +267,7 @@ function gui_fn_teleport_to_location()
 				GameSetCameraPos( item.x, item.y )
 				-- GamePrint("Can't teleport - player doesn't exist")
 			end
+			destroy = true
 		end
 	)
 end
@@ -460,7 +468,19 @@ main_menu_items =
 			ConvertMaterialEverywhere( from_material, to_material )
 		end,
 	},
-
+	{
+		ui_name="Spawn apparition",
+		action = function()
+			local x, y = GameGetCameraPos()
+			SpawnApparition( x, y, 0, true )
+		end,
+	},
+	{
+		ui_name="do_newgame_plus",
+		action = function()
+			do_newgame_plus()
+		end,
+	},
 
 	--[[{
 		ui_name="Fungal shift lava->water",

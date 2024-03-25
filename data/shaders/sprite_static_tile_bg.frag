@@ -59,7 +59,7 @@ float mask_read_supersample8x( vec2 uv )
 void main()
 {
 	vec2 uv = gl_TexCoord[0].xy;
-	vec2 mask_uv = gl_TexCoord[0].zw;
+	vec2 mask_uv = gl_TexCoord[0].zw + vec2(0.007,0.007);
 
 #ifdef PIXEL_ART_FILTER
 	vec4 color = texture2D( tex, pixel_art_filter_uv( uv, tex_size ) );

@@ -35,7 +35,7 @@
       load_this_entity="data/entities/particles/particle_explosion/main_nospark_large.xml"
       hole_enabled="1" 
       ray_energy="16000000"
-      max_durability_to_destroy="20"
+      max_durability_to_destroy="12"
       particle_effect="1" 
       damage_mortals="1" 
       physics_explosion_power.min="1.9" 
@@ -50,6 +50,7 @@
       delay.min="1"
       delay.max="4"
       explosion_delay_id="1"
+      not_scaled_by_gamefx="1"
       audio_event_name="explosions/moving_fast"
       ></config_explosion>
   ></ProjectileComponent>

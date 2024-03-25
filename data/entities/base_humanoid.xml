@@ -1,5 +1,11 @@
 <Entity tags="mortal,human,hittable,homing_target,teleportable_NOT,destruction_target" >
 	
+	<_Transform 
+		rotation="0" 
+		scale.x="1" 
+		scale.y="1" >
+	</_Transform>
+
 	<ItemChestComponent
 		_enabled="0"
 		enemy_drop="1"
@@ -13,12 +19,6 @@
 	    script_death="data/scripts/items/drop_money.lua"
 	    remove_after_executed="1" >
 	</LuaComponent>
-
-	<_Transform 
-		rotation="0" 
-		scale.x="1" 
-		scale.y="1" >
-	</_Transform>
 
 	<VelocityComponent
 		updates_velocity="0" >

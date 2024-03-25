@@ -1,0 +1,266 @@
+<Entity tags="enemy,mortal,human,hittable,homing_target,teleportable_NOT,boss,polymorphable_NOT,miniboss,music_energy_000,necrobot_NOT,glue_NOT,touchmagic_immunity" name="$animal_boss_sky" >
+  
+	<PhysicsBodyComponent 
+		uid="1" 
+		allow_sleep="1" 
+		fixed_rotation="0" 
+		is_bullet="1" 
+		linear_damping="0"
+		angular_damping="0.9"
+		auto_clean="0"
+		on_death_leave_physics_body="0"
+		hax_fix_going_through_ground="1"
+		force_add_update_areas="1"
+	></PhysicsBodyComponent>
+  
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="6"
+		radius_y="6"
+		friction="1"
+		restitution="0.5"
+		material="rock_box2d_nohit_heavy"
+		density="50"
+		is_based_on_sprite="1"
+	></PhysicsShapeComponent>
+
+  	<DamageModelComponent 
+	    hp="10" 
+	    air_needed="0" 
+	    blood_material="" 
+	    drop_items_on_death="0" 
+	    falling_damages="0" 
+	    fire_damage_amount="0.2" 
+	    fire_probability_of_ignition="0" 
+		critical_damage_resistance="1"
+	    is_on_fire="0" 
+	    materials_create_messages="0" 
+	    materials_damage="1" 
+	    materials_that_damage="lava"
+	    materials_how_much_damage="0.001"
+	    ragdoll_filenames_file=""
+	    ragdoll_material="rock_box2d_nohit_heavy"
+		ragdoll_fx_forced="DISINTEGRATED"
+  	></DamageModelComponent>
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+
+		<ItemChestComponent
+			_enabled="0"
+			enemy_drop="0"
+			item_count_min="0"
+			item_count_max="0"
+		></ItemChestComponent>
+
+		<AnimalAIComponent 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="35"
+			attack_dash_enabled="0"
+			attack_dash_damage="0.4"
+			creature_detection_range_x="250"
+			creature_detection_range_y="250"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="0"
+			attack_melee_enabled="0"
+			can_fly="0"  
+			>
+		</AnimalAIComponent>
+
+		<PathFindingComponent
+		    distance_to_reach_node_x="20"
+		    distance_to_reach_node_y="20"
+			frames_to_get_stuck="60"
+		    can_swim_on_surface="1"
+		    can_dive="1"
+			can_walk="1"
+			can_jump="1"
+			jump_speed="100"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="40"
+			initial_jump_max_distance_y="-30" >			
+			<jump_trajectories>
+				<JumpTrajectory x="5" y="15" lob="1" />
+				<JumpTrajectory x="7" y="20" lob="1" />
+				<JumpTrajectory x="10" y="-60" lob="1" />
+				<JumpTrajectory x="40" y="-10" lob="1" />
+				<JumpTrajectory x="40" y="-35" lob="1" />
+				<JumpTrajectory x="60" y="-40" lob="1" />
+				<JumpTrajectory x="60" y="75"  lob="1" />
+			</jump_trajectories>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" 
+		></PathFindingGridMarkerComponent>
+			
+		<CharacterCollisionComponent 
+			getting_crushed_threshold="6"
+			moving_up_before_getting_crushed_threshold="6" >
+		</CharacterCollisionComponent>
+
+		<!-- platforming_type should be set to -1 or there's some glitchy behaviour -->
+		<CharacterDataComponent 
+			platforming_type="0"
+			dont_update_velocity_and_xform="1"
+			collision_aabb_min_x="-2"
+			collision_aabb_max_x="2"  
+			collision_aabb_min_y="-4"
+			collision_aabb_max_y="4"
+			mass="1.9"
+		></CharacterDataComponent>
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="1"
+			is_predator="1" 
+		></GenomeDataComponent>
+
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			run_velocity="0"
+			audio_liquid_splash_intensity="0.2"
+		></CharacterPlatformingComponent>
+		
+		<ControlsComponent>
+		</ControlsComponent>
+
+		<HitboxComponent 
+			aabb_max_x="5" 
+			aabb_max_y="5" 
+			aabb_min_x="-5" 
+			aabb_min_y="-5" 
+		></HitboxComponent>
+	
+		<SpriteAnimatorComponent
+	    ></SpriteAnimatorComponent>
+
+		<SpriteStainsComponent
+			_enabled="1"
+			sprite_id="1"
+		></SpriteStainsComponent>
+
+		<StatusEffectDataComponent
+    	></StatusEffectDataComponent>
+
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/skullfly"
+		></AudioComponent>
+
+		<!-- should be fully serialized -->
+		<CameraBoundComponent
+			_remove_from_base="1"
+		></CameraBoundComponent>
+		
+		<!-- no duplicates -->
+		<SpriteComponent 
+			_remove_from_base="1"
+		></SpriteComponent>
+
+		<!-- should not drop gold -->
+		<LuaComponent 
+			_remove_from_base="1"
+		></LuaComponent>
+
+		<!-- should not have duplicates of these components -->
+		<VelocityComponent
+			_remove_from_base="1"
+		></VelocityComponent>
+
+		<DamageModelComponent
+			_remove_from_base="1"
+		></DamageModelComponent>
+
+		<GameStatsComponent
+			dont_do_logplayerkill="1"
+		></GameStatsComponent>
+	</Base>
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/lukki_tiny"
+	></AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/boss_sky/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+  	<PhysicsAIComponent
+		target_vec_max_len="15.0"
+		force_coeff="20.0"
+		force_balancing_coeff="0.8"
+		force_max="30"
+		torque_coeff="5"
+		torque_balancing_coeff="0"
+		torque_max="0"
+		torque_jump_random="3.5"
+		damage_deactivation_probability="80"
+		damage_deactivation_time_min="60"
+		damage_deactivation_time_max="120" 
+		die_on_remaining_mass_percentage="0.5"
+		levitate="0"
+		v0_swim_logic="0"
+		v0_jump_logic="0"
+		v0_body_id_logic="0"
+		torque_damaged_max="10"
+	></PhysicsAIComponent>
+
+	<SpriteComponent
+		offset_x="6"
+		offset_y="6"
+		image_file="data/entities/animals/boss_sky/boss_sky.png"
+		has_special_scale="1" 
+		special_scale_x="1"
+		special_scale_y="1"
+	></SpriteComponent>
+
+	<LuaComponent 
+		script_source_file="data/entities/animals/boss_sky/boss_sky.lua"
+		script_damage_received="data/entities/animals/boss_sky/boss_sky.lua"
+		script_death="data/entities/animals/boss_sky/boss_sky.lua"
+		call_init_function="1"
+		execute_on_added="1"
+	></LuaComponent>
+
+	<VariableStorageComponent
+		value_float="0"
+	></VariableStorageComponent>
+
+	<HealthBarComponent
+		gui_max_distance_visible="350"
+	></HealthBarComponent>
+
+	<ParticleEmitterComponent
+		emitted_material_name="spark"
+		gravity.y="0.0"
+		lifetime_min="0.5"
+		lifetime_max="1.2"
+		count_min="2"
+		count_max="4"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="32"
+		area_circle_radius.max="72"
+		cosmetic_force_create="0"
+		airflow_force="1.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="240"
+		>
+	</ParticleEmitterComponent>
+
+</Entity>
+

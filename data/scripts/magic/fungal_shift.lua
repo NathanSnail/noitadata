@@ -156,6 +156,10 @@ function fungal_shift( entity, x, y, debug_no_limits )
 				if to.material == "gold" and random_nexti( rnd, 1, 1000 ) ~= 1 then 
 					to.material = random_from_array( greedy_materials )
 				end
+
+				if to.material == "grass_holy" and random_nexti( rnd, 1, 1000 ) ~= 1 then 
+					to.material = "grass"
+				end
 			end
 		end
 

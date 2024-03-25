@@ -358,3 +358,41 @@ if( GlobalsGetValue("MISC_FISH_RAIN") ~= "1" ) then
 		end
 	end
 end
+
+-- potion mimic rain
+if( GlobalsGetValue("MISC_MIMIC_POTION_RAIN") ~= "1" ) then
+	local animals = EntityGetInRadiusWithTag( x, y, 128, "mimic_potion" )
+
+	if ( #animals > 0 ) then
+
+	 -- for i,animal in ipairs(animals) do
+		-- if EntityGetFirstComponent( animal, "AdvancedFishAIComponent" ) == nil then
+		local collected = false
+		local players = EntityGetWithTag( "player_unit" )
+		if ( #players > 0 ) then
+			local player_id = players[1]
+			local px, py = EntityGetTransform( player_id )
+
+			for i,animal in ipairs(animals) do
+				local fx, fy = EntityGetTransform( animal )
+				local distance = math.abs( x - fx ) + math.abs( y - fy )
+			
+				if ( distance < 64 ) then
+					if( collected == false ) then
+						local eid = EntityLoad("data/entities/misc/mimic_potion_rain.xml", px, py)
+						EntityAddChild( player_id, eid )
+						EntityLoad("data/entities/particles/image_emitters/chest_effect.xml", fx, fy)
+					end
+					collected = true
+					EntityKill( animal )
+				end
+			end
+		end
+		
+		if collected then
+			GamePrintImportant( "$log_altar_magic_worm", "" )
+			GlobalsSetValue("MISC_MIMIC_POTION_RAIN", "1" )			
+			AddFlagPersistent( "misc_mimic_potion_rain" )
+		end
+	end
+end

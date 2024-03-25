@@ -793,6 +793,12 @@ end
 
 -----------------------------------------------------------------------------------------
 
+function vec_length(x,y)
+	return math.sqrt( x * x + y * y )
+end
+
+-----------------------------------------------------------------------------------------
+
 function vec_rotate(x, y, angle)
 	local ca = math.cos(angle)
 	local sa = math.sin(angle)

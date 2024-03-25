@@ -1113,8 +1113,15 @@ function biome_modifier_applies_to_biome( modifier, biome_name )
 	return ok
 end
 
+function string.starts(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+
 function apply_modifier_from_data( biome_name, modifier )
-	local biome_filename = "data/biome/" .. biome_name .. ".xml"
+	local biome_filename = biome_name
+	if  string.starts( biome_filename, "data/" ) == false then
+	 	biome_filename = "data/biome/" .. biome_name .. ".xml"
+	 end
 
 	if rnd == nil then
 		rnd = random_create(347893,90734)
@@ -1261,6 +1268,8 @@ function get_modifier_mappings()
 	set_modifier_if_has_none( "pyramid_right", "HOT" )
 
 	set_modifier_if_has_none( "watercave", "MOIST" )
+
+	set_modifier_if_has_none( "data/biome_impl/static_tile/biome_labyrinth.xml", "FOG_OF_WAR_REAPPEARS" )
 
 	if( random_next( rnd, 0.0, 1.0 ) < CHANCE_OF_MOIST_LAKE ) then
 		set_modifier_if_has_none( "lake_statue", "MOIST" )
