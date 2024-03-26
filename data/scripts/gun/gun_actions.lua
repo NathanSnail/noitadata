@@ -3931,6 +3931,7 @@ actions =
 		price = 360,
 		mana = 190,
 		max_uses    = 4, 
+		never_unlimited = true,
 		custom_xml_file = "data/entities/misc/custom_cards/touch_grass.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/touch_grass.xml")
@@ -6900,7 +6901,8 @@ actions =
 		spawn_requires_flag = "card_unlocked_sea_mimic",
 		price = 350,
 		mana = 140,
-		max_uses = 3,
+		max_uses = 2,
+		never_unlimited = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/sea_mimic.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -11084,7 +11086,7 @@ actions =
 		spawn_requires_flag = "card_unlocked_cessation",
 		price = 10,
 		mana = 0,
-		--max_uses = 10,
+		max_uses = 25,
 		--custom_xml_file = "data/entities/misc/custom_cards/rainbow_trail.xml",
 		action = function()
 			c.fire_rate_wait = c.fire_rate_wait + 600
@@ -11112,12 +11114,13 @@ actions =
 				ComponentSetValue2( inventory, "mDisplayFireRateWaitBar", true )
 			end
 
-			StartReload( current_reload_time )
-
-			local effect_comp,effect_entity = GetGameEffectLoadTo( caster_entity, "POLYMORPH_CESSATION", false )
-			if effect_comp ~= NULL_ENTITY then
-				ComponentSetValue2( effect_comp, "frames", lifetime )
+			local platformshooter = EntityGetFirstComponentIncludingDisabled( caster_entity, "PlatformShooterPlayerComponent" )
+			if platformshooter ~= NULL_ENTITY then
+				ComponentSetValue2( platformshooter, "mCessationDo", true )
+				ComponentSetValue2( platformshooter, "mCessationLifetime", lifetime )
 			end
+
+			StartReload( current_reload_time )
 		end,
 	},
 }

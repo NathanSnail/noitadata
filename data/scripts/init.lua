@@ -199,7 +199,6 @@ end
 
 function OnMagicNumbersAndWorldSeedInitialized()
 	-- this is the last point where many Mod* lua API functions are available
-	dofile_once( "data/biome_impl/static_tile/biome_gen_labyrinth.lua" )
 end
 
 function OnBiomeConfigLoaded()

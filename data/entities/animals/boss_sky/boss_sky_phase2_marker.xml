@@ -1,3 +1,6 @@
 <Entity tags="boss_phase2_marker">
+	<!-- to keep this alive over serialization -->
+	<VariableStorageComponent
+	></VariableStorageComponent>
 </Entity>
 

@@ -6,6 +6,7 @@ function permapolymorph_entity( entity_id )
 	local comp_poly = GameGetGameEffect( entity_id, "POLYMORPH" )
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_RANDOM" ) end
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_UNSTABLE" ) end
+	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_CESSATION" ) end
 	
 	-- forever polymorph!
 	if( comp_poly ) then ComponentSetValue2( comp_poly, "frames", -1 ) end
@@ -103,7 +104,13 @@ function nullroom_remove_all_perks()
 		if( player_id ~= nil ) then
 			nullroom_polymorph_violation( player_id )
 		else
-			-- remove all perks on screen?
+			players = EntityGetWithTag( "polymorphed_cessation" )
+			player_id = players[1]
+			if( player_id ~= nil ) then
+				nullroom_polymorph_violation( player_id )
+			else
+				-- remove all perks on screen?
+			end
 		end
 	end
 end

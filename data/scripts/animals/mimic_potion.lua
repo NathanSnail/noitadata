@@ -1,10 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
-	--local kills = tonumber( GlobalsGetValue( "MIMIC_POTION_KILLS", "1" ) ) or 0
-	--kills = kills + 1
-	--GlobalsSetValue( "MIMIC_POTION_KILLS", tostring(kills) )
-	
 	local entity_id = GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 	SetRandomSeed( x, y )
@@ -15,7 +11,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local alive = (mat == mat_mimic)
 	local awoken_count = tonumber( GlobalsGetValue( "potion_mimics_awoken", "0" ) )
 
-	if alive and awoken_count >= 10 and Random( 1, 5 ) == 1 then
+	if alive and HasFlagPersistent( "card_unlocked_sea_mimic" ) and (not EntityHasTag( entity, "mimic_potion_sky" )) and Random( 1, 5 ) == 1 then
 		CreateItemActionEntity( "SEA_MIMIC", x, y )
 	end
 end

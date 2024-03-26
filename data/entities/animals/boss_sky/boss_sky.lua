@@ -61,9 +61,11 @@ if EntityHasTag( GetUpdatedEntityID(), "boss" ) then
 	if #players > 0 then
 		local player_id = players[1]
 		EntityRemoveStainStatusEffect( player_id, "PROTECTION_ALL", 5 )
+		EntityAddRandomStains( player_id, CellFactory_GetType( "water" ), 1 ) -- not so stainless armour 
 	end
 
 	VerletApplyCircularForce( x, y, 80, 0.14 )
+
 
 	if var ~= nil then
 		local ystart = ComponentGetValue2( var, "value_float" )

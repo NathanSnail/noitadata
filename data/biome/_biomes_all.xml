@@ -1039,12 +1039,6 @@
 		color="fffe0000" >
 	</Biome>
 	
-	<Biome
-		biome_filename="data/biome_impl/static_tile/biome_labyrinth.xml"
-		height_index="0"
-		color="ffb60000" >
-	</Biome>
-
 	<Biome 
 		biome_filename="data/biome_impl/static_tile/biome_watchtower.xml" 
 		height_index="0"

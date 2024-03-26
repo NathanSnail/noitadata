@@ -2,7 +2,7 @@
 	<InheritTransformComponent />
 	
 	<LifetimeComponent
-		lifetime="300"
+		lifetime="81"
 		>
 	</LifetimeComponent>
 	

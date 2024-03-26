@@ -27,11 +27,6 @@ RegisterSpawnFunction( 0xffffaadd, "spawn_sign_right" )
 
 local BG_Z = 0
 
-local reward_actions = {
-	"TOUCH_GRASS",
-	"CESSATION",
-}
-
 ------------ small -------------------------------
 
 g_lamp =
@@ -404,6 +399,7 @@ function spawn_potion_mimic_empty(x, y)
 
 	local entity = EntityLoad( "data/entities/animals/mimic_potion.xml", x, y )
 	RemoveMaterialInventoryMaterial( entity )
+	EntityAddTag( entity, "mimic_potion_sky" )
 
 	local var = EntityGetFirstComponent( entity, "VariableStorageComponent", "potion_mimic_awoken" )
 	if var ~= nil then

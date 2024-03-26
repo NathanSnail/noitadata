@@ -1269,8 +1269,6 @@ function get_modifier_mappings()
 
 	set_modifier_if_has_none( "watercave", "MOIST" )
 
-	set_modifier_if_has_none( "data/biome_impl/static_tile/biome_labyrinth.xml", "FOG_OF_WAR_REAPPEARS" )
-
 	if( random_next( rnd, 0.0, 1.0 ) < CHANCE_OF_MOIST_LAKE ) then
 		set_modifier_if_has_none( "lake_statue", "MOIST" )
 	end
