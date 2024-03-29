@@ -11,21 +11,21 @@
 	<!-- this one with convert_entities="1" has to be the first in order -->
 	<MagicConvertMaterialComponent
 		from_any_material="1"
-		convert_entities="1"
         to_material="grass_holy"
         steps_per_frame="7"
         loop="0"
 		is_circle="1"
-        radius="40" 
+        radius="30" 
+		convert_entities="1"
     ></MagicConvertMaterialComponent>
 	
 	<MagicConvertMaterialComponent
 		from_any_material="1"
         to_material="grass_holy"
-        steps_per_frame="4"
+        steps_per_frame="7"
         loop="0"
 		is_circle="1"
-        radius="30"
+        radius="40" 
     ></MagicConvertMaterialComponent>
 	
 	<LifetimeComponent

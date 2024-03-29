@@ -51,6 +51,7 @@ materials_to =
 	{ probability = 0.02, material = "magic_liquid_polymorph" },
 	{ probability = 0.02, material = "magic_liquid_random_polymorph" },
 	{ probability = 0.15, material = "magic_liquid_teleportation" },
+	{ probability = 0.10, material = "mimic_liquid" },
 	{ probability = 0.01, material = "urine" },
 	{ probability = 0.01, material = "poo" },
 	{ probability = 0.01, material = "void_liquid" },

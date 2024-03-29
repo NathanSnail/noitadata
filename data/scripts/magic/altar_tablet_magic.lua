@@ -363,6 +363,8 @@ end
 if( GlobalsGetValue("MISC_MIMIC_POTION_RAIN") ~= "1" ) then
 	local animals = EntityGetInRadiusWithTag( x, y, 128, "mimic_potion" )
 
+	local mat_mimic = CellFactory_GetType( "mimic_liquid")
+
 	if ( #animals > 0 ) then
 
 	 -- for i,animal in ipairs(animals) do
@@ -377,9 +379,16 @@ if( GlobalsGetValue("MISC_MIMIC_POTION_RAIN") ~= "1" ) then
 				local fx, fy = EntityGetTransform( animal )
 				local distance = math.abs( x - fx ) + math.abs( y - fy )
 			
-				if ( distance < 64 ) then
+				local mat = GetMaterialInventoryMainMaterial( animal )
+				local alive = (mat == mat_mimic)
+				local from_sky = EntityHasTag( animal, "mimic_potion_sky" )
+
+				if ( distance < 64 and alive ) then
 					if( collected == false ) then
 						local eid = EntityLoad("data/entities/misc/mimic_potion_rain.xml", px, py)
+						if from_sky then
+							EntityAddTag( eid, "mimic_potion_sky" )
+						end
 						EntityAddChild( player_id, eid )
 						EntityLoad("data/entities/particles/image_emitters/chest_effect.xml", fx, fy)
 					end

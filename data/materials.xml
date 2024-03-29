@@ -5699,7 +5699,7 @@
 	ui_name="$mat_mimic_liquid"
 	wang_color="ffa2332b"
 	density="6"
-	gfx_glow="255"
+	gfx_glow="105"
 	show_in_creative_mode="1"
 	audio_materialaudio_type="MAGICAL" 
 	>

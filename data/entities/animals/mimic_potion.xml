@@ -83,6 +83,10 @@
 	  	<!-- should not suck most materials -->
 		<MaterialSuckerComponent 
 			suck_tag="[mimic_liquid]"
+			randomized_position.min_x="-3"
+			randomized_position.max_x="3"
+			randomized_position.min_y="-2"
+			randomized_position.max_y="2"
 		></MaterialSuckerComponent>
 
 		<!-- should not run potion.lua -->
@@ -294,7 +298,7 @@
 	></LuaComponent>
   
 	<VariableStorageComponent
-		_tags="potion_mimic_awoken"
+		_tags="potion_mimic_awoken,enabled_in_world,enabled_in_hand"
 		value_bool="1"
 	></VariableStorageComponent>
 

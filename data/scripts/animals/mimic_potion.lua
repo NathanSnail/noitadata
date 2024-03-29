@@ -68,15 +68,14 @@ end
 
 
 if alive then
-	local var = EntityGetFirstComponent( entity_id, "VariableStorageComponent", "potion_mimic_awoken" )
+	local var = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent", "potion_mimic_awoken" )
 	if var ~= nil then
 		local awoken = ComponentGetValue2( var, "value_bool" )
-		if awoken ~= true then 
+		if not awoken then 
 			ComponentSetValue2( var, "value_bool", true )
 
 			local count = tonumber( GlobalsGetValue( "potion_mimics_awoken", "0" ) )
-			count = count + 1
-			GlobalsSetValue( "potion_mimics_awoken", tostring(count) )
+			GlobalsSetValue( "potion_mimics_awoken", tostring(count + 1) )
 		end
 	end
 end
