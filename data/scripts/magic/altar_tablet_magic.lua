@@ -383,7 +383,7 @@ if( GlobalsGetValue("MISC_MIMIC_POTION_RAIN") ~= "1" ) then
 				local alive = (mat == mat_mimic)
 				local from_sky = EntityHasTag( animal, "mimic_potion_sky" )
 
-				if ( distance < 64 and alive ) then
+				if ( distance < 64 and alive and EntityGetParent( animal ) == NULL_ENTITY ) then
 					if( collected == false ) then
 						local eid = EntityLoad("data/entities/misc/mimic_potion_rain.xml", px, py)
 						if from_sky then

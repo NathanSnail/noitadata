@@ -11103,19 +11103,19 @@ actions =
 
 			if wand_entity then
 				local ability = EntityGetFirstComponentIncludingDisabled( wand_entity, "AbilityComponent" )
-				if ability ~= NULL_ENTITY then
+				if ability ~= nil then
 					ComponentSetValue2( ability, "mNextFrameUsable", frame + lifetime + c.fire_rate_wait )
 					ComponentSetValue2( ability, "mCastDelayStartFrame", frame + lifetime )
 				end
 			end
 
 			local inventory = EntityGetFirstComponentIncludingDisabled( caster_entity, "InventoryGuiComponent" )
-			if inventory ~= NULL_ENTITY then
+			if inventory ~= nil then
 				ComponentSetValue2( inventory, "mDisplayFireRateWaitBar", true )
 			end
 
 			local platformshooter = EntityGetFirstComponentIncludingDisabled( caster_entity, "PlatformShooterPlayerComponent" )
-			if platformshooter ~= NULL_ENTITY then
+			if platformshooter ~= nil then
 				ComponentSetValue2( platformshooter, "mCessationDo", true )
 				ComponentSetValue2( platformshooter, "mCessationLifetime", lifetime )
 			end

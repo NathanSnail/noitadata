@@ -3,6 +3,7 @@
 	
 	<LifetimeComponent
 		lifetime="75"
+		serialize_duration="1"
 		>
 	</LifetimeComponent>
 	

@@ -481,6 +481,13 @@ main_menu_items =
 			do_newgame_plus()
 		end,
 	},
+	{
+		ui_name="Spawn good wand",
+		action = function()
+			local x,y = GameGetCameraPos()
+			local e = EntityLoad( "data/entities/items/wands/wand_good/wand_good_1.xml", x, y )
+		end,
+	},
 
 	--[[{
 		ui_name="Fungal shift lava->water",

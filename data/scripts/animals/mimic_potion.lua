@@ -9,7 +9,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local mat_mimic = CellFactory_GetType( "mimic_liquid")
 	local mat = GetMaterialInventoryMainMaterial( entity_id )
 	local alive = (mat == mat_mimic)
-	local awoken_count = tonumber( GlobalsGetValue( "potion_mimics_awoken", "0" ) )
 
 	if alive and HasFlagPersistent( "card_unlocked_sea_mimic" ) and (not EntityHasTag( entity, "mimic_potion_sky" )) and Random( 1, 5 ) == 1 then
 		CreateItemActionEntity( "SEA_MIMIC", x, y )
@@ -20,6 +19,12 @@ end
 function enabled_changed( entity_id, is_enabled )
 	if is_enabled == false then
 		return 
+	end
+
+	if EntityGetParent( entity_id ) ~= NULL_ENTITY then
+		EntityRemoveTag( entity_id , "homing_target" )
+	else
+		EntityAddTag( entity_id , "homing_target" )
 	end
 
 	local c = EntityGetAllChildren( entity_id )
