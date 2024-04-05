@@ -291,9 +291,11 @@
 
 	<LuaComponent 
     	_tags="enabled_in_world,enabled_in_hand"
+    	call_init_function="1"
 		script_source_file="data/scripts/animals/mimic_potion.lua"
 		script_death="data/scripts/animals/mimic_potion.lua" 
 		script_enabled_changed="data/scripts/animals/mimic_potion.lua"
+		execute_on_added="1"
 		execute_every_n_frame="30"
 	></LuaComponent>
   

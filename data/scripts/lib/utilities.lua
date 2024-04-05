@@ -825,10 +825,10 @@ end
 -----------------------------------------------------------------------------------------
 
 function color_abgr_merge(r, g, b, a)
-    local r = bit.band(r, 0x000000FF)
-    local g = bit.band(g, 0x000000FF)
-    local b = bit.band(b, 0x000000FF)
-    local a = bit.band(a, 0x000000FF)
+    r = bit.band(r, 0x000000FF)
+    g = bit.band(g, 0x000000FF)
+    b = bit.band(b, 0x000000FF)
+    a = bit.band(a, 0x000000FF)
 
     g = bit.lshift(g, 8)
     b = bit.lshift(b, 16)

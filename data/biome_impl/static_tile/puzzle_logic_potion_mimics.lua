@@ -49,8 +49,8 @@ if #players > 0 and awoken >= awoken_needed and reward_spawned ~= "1" then
 		local sx = x + 1
 		local sy = y - 30
 
-  		EntityLoad( "data/entities/particles/image_emitters/magical_symbol.xml", sx, sy)
-  		GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", sx, sy )
+		EntityLoad( "data/entities/particles/image_emitters/magical_symbol.xml", sx, sy)
+		GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", sx, sy )
 		CreateItemActionEntity( "SEA_MIMIC", sx, sy )
 		AddFlagPersistent( "card_unlocked_sea_mimic" )
 		GlobalsSetValue( "potion_mimics_reward_spawned", "1" )

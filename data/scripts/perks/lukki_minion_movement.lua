@@ -95,7 +95,7 @@ PhysicsApplyForce( entity_id, vel_x, vel_y )
 if ( owner_id ~= 0 ) then
 	x, y = EntityGetTransform( entity_id )
 	local ox, oy = EntityGetTransform( owner_id )
-	local dist = math.abs( x - ox ) + math.abs( y - oy )
+	dist = math.abs( x - ox ) + math.abs( y - oy )
 	
 	if ( dist > 900 ) then
 		EntityLoad( "data/entities/particles/teleportation_source.xml", x, y )

@@ -132,11 +132,19 @@ function init( entity_id )
 
 	
 	if ((( month == 5 ) and ( day == 1 )) or (( month == 4 ) and ( day == 30 ))) and (Random( 0, 100 ) <= 20) then
-		potion_material = "sima"
+		if ( Random( 0, 5 ) <= 4 ) then
+			potion_material = "sima"
+		else
+			potion_material = "beer"
+		end
 	end
 
 	if( jussi and Random( 0, 100 ) <= 9 ) then
-		potion_material = "juhannussima"
+		if ( Random( 0, 3 ) <= 2 ) then
+			potion_material = "juhannussima"
+		else
+			potion_material = "beer"
+		end
 	end
 
 	if( mammi and Random( 0, 100 ) <= 10 ) then

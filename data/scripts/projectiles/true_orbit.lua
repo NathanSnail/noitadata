@@ -16,7 +16,7 @@ if ( owner_id ~= nil ) and ( owner_id ~= NULL_ENTITY ) then
 	local vel_x,vel_y = 0,0
 	
 	if ( orbitdist ~= nil ) and ( orbitdir ~= nil ) and ( px ~= nil ) and ( py ~= nil ) then
-		edit_component( entity_id, "VelocityComponent", function(comp,vars)
+		edit_component( entity_id, "VelocityComponent", function(comp2,vars)
 			vel_x,vel_y = ComponentGetValueVector2( comp, "mVelocity")
 		end)
 		
@@ -31,7 +31,7 @@ if ( owner_id ~= nil ) and ( owner_id ~= NULL_ENTITY ) then
 			ComponentSetValue2( orbitdist, "value_float", dist )
 			ComponentSetValue2( orbitdir, "value_float", psx )
 			
-			edit_component( entity_id, "ProjectileComponent", function(comp,vars)
+			edit_component( entity_id, "ProjectileComponent", function(comp2,vars)
 				vars.collide_with_world = 0
 				vars.die_on_low_velocity = 0
 			end)

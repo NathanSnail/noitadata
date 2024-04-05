@@ -1113,14 +1113,14 @@ function biome_modifier_applies_to_biome( modifier, biome_name )
 	return ok
 end
 
-function string.starts(String,Start)
-   return string.sub(String,1,string.len(Start))==Start
+function string_starts( str, start )
+   return string.sub( str, 1, string.len(start) ) == start
 end
 
 function apply_modifier_from_data( biome_name, modifier )
 	local biome_filename = biome_name
-	if  string.starts( biome_filename, "data/" ) == false then
-	 	biome_filename = "data/biome/" .. biome_name .. ".xml"
+	if  string_starts( biome_filename, "data/" ) == false then
+		biome_filename = "data/biome/" .. biome_name .. ".xml"
 	 end
 
 	if rnd == nil then

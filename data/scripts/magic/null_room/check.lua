@@ -142,9 +142,9 @@ function DEBUG_REMOVE_ALL_PERKS()
 	GameTriggerMusicEvent( "music/oneshot/heaven_02_no_drs", true, x, y )
 	AddFlagPersistent( "secret_null" )
 	
-	local x, y = GameGetCameraPos()
-	EntityLoad( "data/entities/particles/supernova.xml", x, y )
-	create_all_player_perks( x, y - 32 )
+	local xx, yy = GameGetCameraPos()
+	EntityLoad( "data/entities/particles/supernova.xml", xx, yy )
+	create_all_player_perks( xx, yy - 32 )
 	-- remove_all_perks()
 	nullroom_remove_all_perks()
 	

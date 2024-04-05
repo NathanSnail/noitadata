@@ -157,12 +157,11 @@ function perk_get_spawn_order( ignore_these_ )
 	end
 
 	-- DEBUG
-	if( false ) then
+	--[[if( false ) then
 		for i,perk in ipairs(perk_deck) do
 			print(  tostring( i ) .. ": " .. perk )
 		end
-	end
-	
+	end]]--
 
 	return perk_deck
 end

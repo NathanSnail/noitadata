@@ -13,7 +13,7 @@ for i,v in ipairs(targets2) do
 end
 
 for i,v in ipairs( targets ) do
-	if ( v ~= entity_id ) then
+	if ( v ~= entity_id and not EntityHasTag( v, "mimic_potion" ) ) then
 		local c = EntityGetAllChildren( v )
 		local root_id = EntityGetRootEntity( v )
 		local valid = true

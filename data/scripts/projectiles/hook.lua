@@ -14,11 +14,11 @@ if ( owner_id ~= nil ) and ( owner_id ~= NULL_ENTITY ) then
 	local vel_x = math.cos( dir ) * 800
 	local vel_y = 0 - math.sin( dir ) * 800
 	
-	edit_component( owner_id, "VelocityComponent", function(comp,vars)
-		ComponentSetValueVector2( comp, "mVelocity", vel_x, vel_y )
+	edit_component( owner_id, "VelocityComponent", function(vcomp,vars)
+		ComponentSetValueVector2( vcomp, "mVelocity", vel_x, vel_y )
 	end)
 	
-	edit_component( owner_id, "CharacterDataComponent", function(comp,vars)
-		ComponentSetValueVector2( comp, "mVelocity", vel_x, vel_y )
+	edit_component( owner_id, "CharacterDataComponent", function(ccomp,vars)
+		ComponentSetValueVector2( ccomp, "mVelocity", vel_x, vel_y )
 	end)
 end

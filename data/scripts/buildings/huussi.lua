@@ -1,7 +1,10 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function material_area_checker_failed( pos_x, pos_y )
-	if HasFlagPersistent( "card_unlocked_piss" ) then
+	local kakken = EntityGetInRadiusWithTag( pos_x, pos_y, 200, "poopstone" )
+	local has_kakken = kakken ~= nil and #kakken > 0
+
+	if HasFlagPersistent( "card_unlocked_piss" ) and not has_kakken then
 		SetRandomSeed( x, y ) 
 		if Random( 0, 2 ) == 1 then
 			EntityLoad( "data/entities/items/pickup/goldnugget_200.xml", pos_x, pos_y )

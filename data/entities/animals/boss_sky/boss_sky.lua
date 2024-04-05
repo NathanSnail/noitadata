@@ -33,9 +33,9 @@ function damage_received( damage )
 	end)
 	
 	local entity_dmg = EntityLoad( "data/entities/animals/boss_sky/boss_sky_damage.xml", x, y )
-	local var = EntityGetFirstComponent( entity_dmg, "VariableStorageComponent" )
-	if var ~= nil then
-		ComponentSetValue2( var, "value_float", hp_percentage )
+	local var2 = EntityGetFirstComponent( entity_dmg, "VariableStorageComponent" )
+	if var2 ~= nil then
+		ComponentSetValue2( var2, "value_float", hp_percentage )
 	end
 
 	EntityAddTag( entity_id, "music_energy_100_near" )
