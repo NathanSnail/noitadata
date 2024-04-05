@@ -5702,6 +5702,7 @@
 	gfx_glow="105"
 	show_in_creative_mode="1"
 	audio_materialaudio_type="MAGICAL" 
+	ignore_self_reaction_warning="1"
 	>
 	<Graphics 
 	texture_file="data/materials_gfx/mimic_liquid.png" 
