@@ -1,7 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function init( entity_id )
-	EntityRemoveTag( entity_id , "enemy" ) -- to fix bug with RISKY_CRITITAL, which uses thsi tag to detect enemies nearby
+	EntityRemoveTag( entity_id , "enemy" ) -- to fix bug with RISKY_CRITICAL, which uses this tag to detect enemies nearby
 end
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
@@ -14,7 +14,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local mat = GetMaterialInventoryMainMaterial( entity_id )
 	local alive = (mat == mat_mimic)
 
-	if alive and HasFlagPersistent( "card_unlocked_sea_mimic" ) and (not EntityHasTag( entity_id, "mimic_potion_sky" )) and Random( 1, 5 ) == 1 then
+	if alive and (not EntityHasTag( entity_id, "mimic_potion_sky" )) and Random( 1, 5 ) == 1 then
 		CreateItemActionEntity( "SEA_MIMIC", x, y )
 	end
 end

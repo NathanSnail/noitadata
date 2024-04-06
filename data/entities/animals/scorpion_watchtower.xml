@@ -1,0 +1,10 @@
+<Entity tags="mortal,prey" name="$animal_scorpion">
+  
+	<Base file="data/entities/animals/scorpion.xml" >
+	    <CameraBoundComponent
+	        max_count="30"
+	    ></CameraBoundComponent>
+	</Base>
+
+</Entity>
+

@@ -20,6 +20,7 @@ RegisterSpawnFunction( 0xffffeed2, "spawn_boss_phase2_marker" )
 RegisterSpawnFunction( 0xffffeed3, "spawn_book_barren" )
 RegisterSpawnFunction( 0xffffeed4, "spawn_potion_beer" )
 RegisterSpawnFunction( 0xffffeed5, "spawn_potion_milk" )
+RegisterSpawnFunction( 0xffffeed6, "spawn_scorpion" )
 RegisterSpawnFunction( 0xffffaaaa, "spawn_sign_left" )
 RegisterSpawnFunction( 0xffffaadd, "spawn_sign_right" )
 
@@ -466,6 +467,10 @@ end
 
 function spawn_potion_milk(x, y)
 	EntityLoad( "data/entities/items/pickup/potion_milk.xml", x, y-5 )
+end		
+
+function spawn_scorpion(x, y)
+	EntityLoad( "data/entities/animals/scorpion_watchtower.xml", x, y )
 end		
 
 

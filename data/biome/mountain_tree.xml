@@ -27,6 +27,11 @@
     mMultiplierGradient="0.871429" 
     audio_ambience="cave"
     audio_ambience_surface="hills" 
+    audio_music_2="surface0"
+    audio_music_trigger_without_danger="1"
+    audio_music_no_forced_quietness="1"
+    audio_music_trigger_max_y="-440"
+    audio_biome_id_for_music="tree"
     coarse_map_force_terrain="1"
     >
     <BitmapCaves 

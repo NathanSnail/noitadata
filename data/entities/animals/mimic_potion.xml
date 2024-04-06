@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,mimic_potion,mimic_potion_sky" name="$animal_mimic_potion" >
+<Entity tags="glue_NOT,mimic_potion" name="$animal_mimic_potion" >
   
 	<Base file="data/entities/items/pickup/potion.xml">
   

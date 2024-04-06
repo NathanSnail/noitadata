@@ -17,7 +17,7 @@ if ( owner_id ~= nil ) and ( owner_id ~= NULL_ENTITY ) then
 	
 	if ( orbitdist ~= nil ) and ( orbitdir ~= nil ) and ( px ~= nil ) and ( py ~= nil ) then
 		edit_component( entity_id, "VelocityComponent", function(comp2,vars)
-			vel_x,vel_y = ComponentGetValueVector2( comp, "mVelocity")
+			vel_x,vel_y = ComponentGetValueVector2( comp2, "mVelocity")
 		end)
 		
 		local dist = ComponentGetValue2( orbitdist, "value_float" )

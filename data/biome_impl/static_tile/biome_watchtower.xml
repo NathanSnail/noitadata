@@ -13,6 +13,11 @@
     wang_map_width="52"
     wang_map_height="154"
     audio_ambience="temple"
+    audio_ambience_surface="desert" 
+    audio_music_2="surface1"
+    audio_music_trigger_without_danger="1"
+    audio_music_no_forced_quietness="1"
+    audio_music_trigger_max_y="-160"
     has_rain="0"
   >
   <BitmapCaves 

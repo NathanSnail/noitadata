@@ -20,6 +20,7 @@
     audio_music_2="watercave"
     audio_music_trigger_without_danger="1"
     audio_music_no_forced_quietness="1"
+    audio_biome_id_for_music="watercave"
     audio_ambience="wandcave"
     fog_of_war_type="HEAVY_NO_CLEAR"
     >
