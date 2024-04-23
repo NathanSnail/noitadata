@@ -164,10 +164,19 @@ function fungal_shift( entity, x, y, debug_no_limits )
 			end
 		end
 
+
+		-- NOTE( Petri ): Check if the material is on our ban list
+		local to_material = CellFactory_GetType( to.material )
+		if( CellFactory_HasTag( to_material, "[NO_FUNGAL_SHIFT]" ) ) then
+			random_next( rnd, -1, 1 )
+			to = pick_random_from_table_weighted( rnd, materials_to )
+			to_material = CellFactory_GetType( to.material )
+		end
+
 		-- apply effects
 		for i,it in ipairs(from.materials) do
 			local from_material = CellFactory_GetType( it )
-			local to_material = CellFactory_GetType( to.material )
+			
 			from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( from_material ) ) )
 			if from.name_material then
 				from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( CellFactory_GetType( from.name_material ) ) ) )

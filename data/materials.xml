@@ -43,9 +43,9 @@
   [slime]
   [plant]
   [corrodible]
-  [meltable]
+  [meltable] (*)
   [meltable_to_lava]
-  [molten]
+  [molten]	(**)
   [soluble]
   [evaporable]
   [evaporable_fast]
@@ -54,9 +54,14 @@
   [requires_air]
   [requires_water]
   [grows_grass]
+
+  [NO_FUNGAL_SHIFT]  (***)
   
-  
-  NOTE: [meltable] materials need to have a MATERIALNAME_molten variation
+
+  NOTES: 
+  *) 	[meltable] materials need to have a MATERIALNAME_molten variation
+  **) 	[molten] materials are converted from MATERIALNAME_molten to MATERIALNAME 
+  ***) 	[NO_FUNGAL_SHIFT] these materials are skipped in fungal_shift.lua
 -->
 
 <!--
@@ -10649,20 +10654,20 @@
   <CellData
 	name="orb_powder"
 	ui_name="$mat_orb_powder"
-  	tags=""
+  	tags="[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
 	cell_type="liquid"
 	wang_color="fff7f3ee"
-	generates_smoke="1"
+	generates_smoke="0"
 	liquid_gravity="2"
 	liquid_sand="1"
 	on_fire="1"
 	requires_oxygen="0"
 	temperature_of_fire="100"
 	autoignition_temperature="0"
-	generates_flames="30"
+	generates_flames="0"
 	hp="1000" 
 	fire_hp="1000"
 	audio_physics_material_event="sand"
@@ -10757,6 +10762,18 @@
 	>
   </CellData>
 
+  <!-- NOTE( Petri ): 23.4.2024 - fixing molten plastic resolidifying to very tiny box2d bodies -->
+  <CellData
+	_parent="plastic_red"
+	name="plastic_grey"
+	ui_name="$mat_plastic_red"
+  	tags="[corrodible],[meltable],[alchemy]"
+	color="ff707271"
+	wang_color="ff707271"
+	liquid_sand="1"
+	>
+  </CellData>
+
   <CellData
 	name="plastic_red_molten"
 	ui_name="$mat_plastic_red_molten"
@@ -10773,6 +10790,16 @@
 	requires_oxygen="1"
 	temperature_of_fire="10"
 	hp="100" 
+	>
+  </CellData>
+
+  <CellData
+	_parent="plastic_red_molten"
+	name="plastic_grey_molten"
+	ui_name="$mat_plastic_red_molten"
+  	tags="[liquid],[corrodible],[molten],[meltable_to_lava],[alchemy],[liquid_common]"
+	color="ff707273"
+	wang_color="ff707273"
 	>
   </CellData>
 
@@ -13020,7 +13047,7 @@
   <CellData
 	name="plastic"
 	ui_name="$mat_plastic"
-  	tags="[box2d],[corrodible],[meltable],[alchemy],[solid],[earth]"
+  	tags="[box2d],[corrodible],[meltable_plastic],[alchemy],[solid],[earth]"
 	burnable="0"
 	density="8"
 	cell_type="solid"
@@ -15245,7 +15272,28 @@
 	output_cell1="[meltable_metal]_molten" 	output_cell2="[lava]"  >
   </Reaction>
 
+  <!-- [meltable_platic] reactions -->
+  <Reaction probability="20"
+	input_cell1="[fire]"				input_cell2="[meltable_plastic]" 		        
+	output_cell1="smoke"				output_cell2="[meltable_plastic]_molten"  >
+  </Reaction>
 
+  <!-- molten plastic resolidifies into plastic_grey (to avoid performance issues of 1x1 physics bodies) -->
+  <Reaction probability="10"
+	input_cell1="[meltable_plastic]_molten" 	input_cell2="air"
+	output_cell1="plastic_grey"		 		    output_cell2="air"  >
+  </Reaction>
+
+  <!-- molten turns to solid when colliding with liquid (solid as a state of material) -->
+  <Reaction probability="20"
+	input_cell1="[meltable_plastic]_molten" 	input_cell2="water"
+	output_cell1="plastic_grey" 		    	output_cell2="steam"  >
+  </Reaction>
+
+  <Reaction probability="80"
+	input_cell1="[meltable_plastic]" 			input_cell2="[lava]"
+	output_cell1="[meltable_plastic]_molten" 	output_cell2="[lava]"  >
+  </Reaction>
 
 <!-- =================================================================================================================  -->
 <!--- lava reactions -->
