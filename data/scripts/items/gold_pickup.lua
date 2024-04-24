@@ -8,11 +8,15 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	local money = 0
 	local value = 10
 	local hp_value = 0
-	
-	edit_component( entity_who_picked, "WalletComponent", function(comp,vars)
-		money = ComponentGetValueInt( comp, "money")
-	end)
 
+	-- NOTE( Petri ): 24.4.2024 - changed this to use ComponentGetValue2(), because money is a int64
+	-- and the old handling (ComponentGetValueInt() ) would have cast it to an int. 
+	-- That handling could have lost some precision and maybe caused issues
+	local wallet_comp = EntityGetFirstComponent( entity_who_picked, "WalletComponent" )
+	if( wallet_comp ~= nil ) then
+		money = ComponentGetValue2( wallet_comp, "money" )
+	end
+	
 	-- load the gold_value from VariableStorageComponent
 	local components = EntityGetComponent( entity_item, "VariableStorageComponent" )
 	
@@ -46,9 +50,9 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 
 	money = money + value
 	
-	edit_component( entity_who_picked, "WalletComponent", function(comp,vars)
-		vars.money = money
-	end)
+	if( wallet_comp ~= nil ) then
+		money = ComponentSetValue2( wallet_comp, "money", money )
+	end
 
 	if( hp_value > 0 ) then
 		hp_value = hp_value * 0.5

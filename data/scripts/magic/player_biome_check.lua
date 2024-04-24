@@ -41,7 +41,7 @@ if ( ( string.find( biome, "holymountain" ) ~= nil ) or ( string.find( biome, "v
 		GlobalsSetValue( "HOLY_MOUNTAIN_VISITS", tostring( hm_visits ) )
 		GlobalsSetValue( "HOLY_MOUNTAIN_DEPTH", tostring( deepest_hm ) )
 		
-		print( "uusi HM " .. tostring( hm_visits ) )
+		-- print( "uusi HM " .. tostring( hm_visits ) )
 	end
 end
 

@@ -32,10 +32,15 @@ end
 
 
 -- every update
-local players = get_players()
-if #players > 0 then
-	local player_id = players[1]
-	EntityRemoveStainStatusEffect( player_id, "PROTECTION_ALL", 5 )
+local anger = tonumber( GlobalsGetValue( "HELPLESS_KILLS", "1" ) ) or 1
+
+-- only remove ambrosia if player has murdered more than 60 helpless animals
+if( anger >= 60 ) then
+	local players = get_players()
+	if #players > 0 then
+		local player_id = players[1]
+		EntityRemoveStainStatusEffect( player_id, "PROTECTION_ALL", 5 )
+	end
 end
 
 VerletApplyCircularForce( x, y, 80, 0.14 )

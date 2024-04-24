@@ -1,6 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once( "data/scripts/game_helpers.lua" )
 
+
 function do_money_drop( amount_multiplier, trick_kill )
 	
 	if ( GameGetIsTrailerModeEnabled() ) then return end
@@ -81,7 +82,36 @@ function do_money_drop( amount_multiplier, trick_kill )
 			table.insert( entity_list, {eid, 6} )
 		end	
 	end
+	-------
 	
+	--- NOTE( Petri ): Handle extra large drops, by dropping a statue worth a lot of cheddar
+	if( money >= 200000 * 11 ) then
+		local extra_money = ( money - (200000 * 10 ))
+		money = money - extra_money
+
+		-- clamp extra money to int32 maxish
+		-- also no need to spawn rest of the dough
+		if( extra_money > ( 2147483647 - 512 ) ) then 
+			extra_money = ( 2147483647 - 512 ) 
+			money = 0
+		end
+
+		local eid = load_gold_entity( gold_entity .. "x.xml", x, y-8, remove_timer )
+
+		local var_comps = EntityGetComponent( eid, "VariableStorageComponent" )
+		if ( var_comps ~= nil ) then
+			for i,v in ipairs( var_comps ) do
+				local n = ComponentGetValue2( v, "name" )
+				if ( n == "gold_value" ) then
+					ComponentSetValue2( v, "value_int", extra_money )
+					break
+				end
+			end
+		end
+
+		table.insert( entity_list, {eid, 12} )
+	end
+
 	---
 	while money >= 200000 do
 		local eid = load_gold_entity( gold_entity .. "200000.xml", x, y-8, remove_timer )

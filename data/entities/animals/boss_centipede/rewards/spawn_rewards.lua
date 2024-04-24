@@ -26,9 +26,10 @@ function spawn_rewards(x, y)
 	local e_id = EntityGetClosestWithTag( x, y, "player_unit")
 	local wallet_comp = EntityGetFirstComponent( e_id, "WalletComponent" )
 
+	-- NOTE( Petri ): 24.4.2024 - int64 handling of WalletComponent money
 	if( wallet_comp ~= nil ) then 
-		money_now = tonumber( ComponentGetValue( wallet_comp, "money" ) )
-		money_all_time = money_now + tonumber( ComponentGetValue( wallet_comp, "money_spent" ) )
+		money_now = tonumber( ComponentGetValue2( wallet_comp, "money" ) )
+		money_all_time = money_now + tonumber( ComponentGetValue2( wallet_comp, "money_spent" ) )
 	end
 
 	print( "enemies_killed: " .. tostring(enemies_killed) )

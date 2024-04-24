@@ -25,15 +25,17 @@ function item_pickup( entity_item, entity_who_picked, name )
 	
 	local money = 0
 	
-	edit_component( entity_who_picked, "WalletComponent", function(comp,vars)
-		money = ComponentGetValueInt( comp, "money")
-	end)
+	-- NOTE( Petri ): 24.4.2024 - WalletComponent uses int64 internally, ComponentGetSet2 should handle it proper
+	local wallet_comp = EntityGetFirstComponent( entity_who_picked, "WalletComponent" )
+	if wallet_comp ~= nil then
+		money = ComponentGetValue2( wallet_comp, "money")
+	end
 
 	money = money + value
 	
-	edit_component( entity_who_picked, "WalletComponent", function(comp,vars)
-		vars.money = money
-	end)
+	if wallet_comp ~= nil then
+		ComponentSetValue2( wallet_comp, "money", money )
+	end
 	
 	SetRandomSeed( pos_x, pos_y )
 
