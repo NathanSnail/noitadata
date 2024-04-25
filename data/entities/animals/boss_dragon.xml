@@ -252,8 +252,8 @@
 		b="0" >
 	</LightComponent>
 
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 	
     <MusicEnergyAffectorComponent
     	energy_target="1">

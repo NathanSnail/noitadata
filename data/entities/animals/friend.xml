@@ -205,8 +205,8 @@
 		z_index="-9000" >
 	</SpriteComponent>
 	
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 	
 	<VariableStorageComponent
 		_tags="no_gold_drop">

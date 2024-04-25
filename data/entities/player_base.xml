@@ -1,6 +1,8 @@
 <Entity 
   name="DEBUG_NAME:player"
-  tags="mortal,human,hittable,peasant,prey,player_unit,teleportable" >
+  tags="mortal,human,hittable,peasant,prey,player_unit,teleportable" 
+  serialize="0"
+  >
   
   <HotspotComponent
       _tags="hand"

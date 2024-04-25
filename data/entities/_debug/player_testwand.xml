@@ -320,8 +320,8 @@
     <ItemPickUpperComponent>
     </ItemPickUpperComponent>
 
-    <HealthBarComponent>
-    </HealthBarComponent>
+    <BossHealthBarComponent>
+    </BossHealthBarComponent>
 
 	<SpriteParticleEmitterComponent
         _tags="jetpack"

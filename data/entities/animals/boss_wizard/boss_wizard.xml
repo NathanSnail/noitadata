@@ -342,8 +342,8 @@
 		z_index="-9000" >
 	</SpriteComponent>
 	
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 	
 </Entity>
 

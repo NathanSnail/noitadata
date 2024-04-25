@@ -246,8 +246,8 @@
 		 >
 	</SpriteComponent>
 
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 		
 	<LightComponent 
 		_enabled="1" 

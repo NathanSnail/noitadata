@@ -93,7 +93,7 @@ else
 		end)
 	end
 
-	local comp = EntityAddComponent( apparition, "HealthBarComponent", { gui_max_distance_visible = 350 } )
+	local comp = EntityAddComponent( apparition, "BossHealthBarComponent", { gui_max_distance_visible = 350 } )
 	EntityAddTag( apparition, "miniboss" )
 	EntityAddTag( apparition, "music_energy_000_near" )
 	local musicenergy = EntityGetFirstComponent( apparition, "MusicEnergyAffectorComponent" )

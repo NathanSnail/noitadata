@@ -267,11 +267,11 @@
 		</GameEffectComponent>
 	</Entity>
 
-	<HealthBarComponent
+	<BossHealthBarComponent
 		_enabled="0"
 		_tags="disabled_at_start"
 		gui_special_final_boss="1"
 		gui_max_distance_visible="1500"
-	></HealthBarComponent>
+	></BossHealthBarComponent>
 
 </Entity>

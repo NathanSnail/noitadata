@@ -202,8 +202,8 @@
 		z_index="-9000" >
 	</SpriteComponent>
 		
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 	
 	<LuaComponent
 		script_death="data/entities/animals/boss_robot/death.lua"

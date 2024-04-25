@@ -21,14 +21,18 @@ end
 
 -- this is needed because item component enable/disable logic doesn't enable the legs for some reason
 function enabled_changed( entity_id, is_enabled )
-	if is_enabled == false then
-		return 
-	end
 
+	-- NOTE( Petri ): Bug fixing homing targeting mimic potion in hand. 
+	-- This section was skipped when is_enabled was false
 	if EntityGetParent( entity_id ) ~= NULL_ENTITY then
 		EntityRemoveTag( entity_id , "homing_target" )
 	else
 		EntityAddTag( entity_id , "homing_target" )
+	end
+
+
+	if is_enabled == false then
+		return 
 	end
 
 	local c = EntityGetAllChildren( entity_id )

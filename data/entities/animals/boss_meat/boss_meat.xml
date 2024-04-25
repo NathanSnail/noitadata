@@ -253,9 +253,9 @@
 		z_index="-9001" >
 	</SpriteComponent>
 		
-	<HealthBarComponent
+	<BossHealthBarComponent
 		in_world="1"
-	></HealthBarComponent>
+	></BossHealthBarComponent>
 	
 	<LuaComponent
 		script_death="data/entities/animals/boss_meat/death.lua"

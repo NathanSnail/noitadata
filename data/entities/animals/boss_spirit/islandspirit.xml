@@ -253,8 +253,8 @@
 		z_index="-9000" >
 	</SpriteComponent>
 	
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 	
 	<ParticleEmitterComponent
 		emitted_material_name="spark"

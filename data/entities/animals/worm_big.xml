@@ -263,10 +263,10 @@
 		 >
 	</SpriteComponent>
 
-	<HealthBarComponent
+	<BossHealthBarComponent
 		gui="0"
 		in_world="1">
-	</HealthBarComponent>
+	</BossHealthBarComponent>
 
 	<CameraBoundComponent
 		max_count="10"

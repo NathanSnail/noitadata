@@ -230,9 +230,9 @@
 		value_float="0"
 	></VariableStorageComponent>
 
-	<HealthBarComponent
+	<BossHealthBarComponent
 		gui_max_distance_visible="350"
-	></HealthBarComponent>
+	></BossHealthBarComponent>
 
 	<ParticleEmitterComponent
 		emitted_material_name="spark"

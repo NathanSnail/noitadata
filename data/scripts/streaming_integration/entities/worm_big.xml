@@ -262,9 +262,11 @@
 		 >
 	</SpriteComponent>
 
-	<HealthBarComponent>
-	</HealthBarComponent>
-
+	<BossHealthBarComponent
+		gui="0"
+		in_world="1">
+	</BossHealthBarComponent>
+	
 	<CameraBoundComponent
 		max_count="10"
 		distance="2000">
