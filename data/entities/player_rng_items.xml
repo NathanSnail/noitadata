@@ -1,11 +1,6 @@
 <Entity 
   name="DEBUG_NAME:player"
-  tags="mortal,human,hittable,peasant,prey,player_unit,teleportable" 
-  serialize="0" 
->
-
-  <!-- NOTE( Petri ): 25.4.2024 - added serialize=0 to fix the bug in which player is killed if travelling back to an area that is being serialized. -->
-
+  tags="mortal,human,hittable,peasant,prey,player_unit,teleportable" >
   
   <Base file="data/entities/player_base.xml" include_children="1" />
 
