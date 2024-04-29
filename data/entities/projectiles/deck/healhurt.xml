@@ -133,7 +133,8 @@
 	</VariableStorageComponent>
 	
 	<HitEffectComponent 
-        effect_hit="LOAD_CHILD_ENTITY"
+        effect_hit="LOAD_CHILD_ENTITY_LIMIT_TO_X"
+        value="6"
         value_string="data/entities/misc/effect_healhurt.xml" >
 	</HitEffectComponent >
 
