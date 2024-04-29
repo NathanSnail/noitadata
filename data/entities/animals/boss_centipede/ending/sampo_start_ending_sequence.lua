@@ -46,6 +46,8 @@ if essence_1 and essence_2 and essence_3 and essence_4 then
 end
 
 local newgame_orbs_required = 5 + newgame_n
+
+-- "new game+" check
 if( orb_count < 33 
 	and 
 	( ( orb_count > ORB_COUNT_IN_WORLD and newgame_orbs_required >= ORB_COUNT_IN_WORLD and orb_count >= newgame_orbs_required ) or 
@@ -91,8 +93,7 @@ if( doing_newgame_plus == false ) then
 
 	--EntityLoad("data/entities/particles/gold_pickup.xml", x, y)
 	-- print("Enemies killed: " .. tostring(enemies_killed) )
-
-	print(tostring(endpoint_underground))
+	-- print(tostring(endpoint_underground))
 
 	if( orb_count >= 33 ) then
 		-- ORBS >= 33 ENDINGs
@@ -110,6 +111,15 @@ if( doing_newgame_plus == false ) then
 			local ex, ey = EntityGetTransform( endpoint_mountain[1] )
 			distance_from_mountain = math.abs(x - ex) + math.abs(y - ey)
 		end
+
+		-- NOTE( Petri ): 29.4.2024 - fixing the soft lock that could happen if player has 33 or more orbs
+		-- and ends the game at the underground place
+		if ( #endpoint_underground > 0 ) then
+			local ex, ey = EntityGetTransform( endpoint_underground[1] )
+			local distance = math.abs(x - ex) + math.abs(y - ey)
+			if( distance < distance_from_mountain ) then distance_from_mountain = distance end
+		end
+		
 
 		if ( distance_from_mountain < 32 ) then
 			-- ending 2, everyone is happy

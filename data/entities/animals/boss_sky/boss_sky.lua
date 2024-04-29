@@ -60,8 +60,12 @@ if EntityHasTag( GetUpdatedEntityID(), "boss" ) then
 	local players = get_players()
 	if #players > 0 then
 		local player_id = players[1]
-		EntityRemoveStainStatusEffect( player_id, "PROTECTION_ALL", 5 )
-		EntityAddRandomStains( player_id, CellFactory_GetType( "water" ), 1 ) -- not so stainless armour 
+		local px, py = EntityGetTransform( player_id )
+		-- NOTE( Petri ): 29.4.2024 - Clamped this to a distance
+		if( get_distance( px, py, x, y ) <= 350 ) then
+			EntityRemoveStainStatusEffect( player_id, "PROTECTION_ALL", 5 )
+			EntityAddRandomStains( player_id, CellFactory_GetType( "water" ), 1 ) -- not so stainless armour 
+		end
 	end
 
 	VerletApplyCircularForce( x, y, 80, 0.14 )
