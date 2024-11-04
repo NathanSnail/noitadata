@@ -20,3 +20,8 @@ shutil.copytree(
 	"nightmare_mod",
 	dirs_exist_ok=True,
 )
+shutil.copytree(
+	"/home/nathan/.local/share/Steam/steamapps/common/Noita/mods/daily_practice/",
+	"daily_practice_mod",
+	dirs_exist_ok=True,
+)
