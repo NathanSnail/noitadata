@@ -1,0 +1,37 @@
+<Materials>
+
+ <CellData
+	name="rainbow"
+	ui_name="rainbow"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="5"
+	cell_type="liquid"
+	wang_color="80ff024e"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	lifetime="300"
+	>
+<Graphics 
+	texture_file="mods/example/files/materials_gfx/rainbow.png" 
+	color="88E8BD5C" >
+    </Graphics>
+	<ParticleEffect
+		vel.y="2.86"
+		vel_random.min_x="-6"
+		vel_random.max_x="6"
+		vel_random.min_y="-2.9"
+		vel_random.max_y="3.2"
+		render_on_grid="1"
+		probability="0.6"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+  </CellData>
+
+</Materials>

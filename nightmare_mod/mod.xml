@@ -1,0 +1,22 @@
+<Mod
+	name="Nightmare"
+	description="For a more challenging experience."
+	ui_newgame_name="$gamemode_nightmare"
+	ui_newgame_description="$gamemode_nightmare_desc"
+	ui_newgame_gfx_banner_bg="mods/nightmare/files/menu_banner_background.png"
+	ui_newgame_gfx_banner_fg="mods/nightmare/files/menu_banner_overlay.png"
+	request_no_api_restrictions="0" 
+	is_game_mode="1"
+	> 
+</Mod>
+
+<!-- 
+	If a mod requires access to the full lua api e.g. os.* io.* it has to request acesss via 'request_no_api_restrictions="1"'.
+	It is recommended that other options are explored first, as we may completely disable those APIs in the future.
+	By default mods have access to the table, string, math and bit libraries and to the APIs exposed by the game.
+ -->
+
+<!--
+	if 'is_game_mode="1"', the mod will be display in the new game menu as a game mode and activates when playing that game mode.
+	ui_newgame_* control how the mod is displayed in the game mode menu.
+-->
