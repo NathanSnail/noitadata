@@ -1,7 +1,0 @@
-<MagicNumbers 
-  BIOME_MAP="mods/nightmare/files/biome_map.lua" 
-  DAMAGE_BLOOD_AMOUNT_MIN="5"
-  DAMAGE_BLOOD_AMOUNT_MAX="10"
-  RAGDOLL_BLOOD_MULTIPLIER="1" 
-  > 
-</MagicNumbers>
