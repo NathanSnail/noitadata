@@ -1,8 +1,0 @@
-<MagicNumbers 
-  BIOME_MAP="mods/daily_practice/files/magic_numbers/biome_map_03.lua" 
-
-  DESIGN_PLAYER_START_POS_X="-690" 
-  DESIGN_PLAYER_START_POS_Y="6485" 
-
-  > 
-</MagicNumbers>
