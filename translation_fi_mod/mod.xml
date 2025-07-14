@@ -1,0 +1,14 @@
+<Mod
+	name="Finnish Translation"
+	description="A work in progress Finnish translation."
+	request_no_api_restrictions="0" 
+	is_translation="1"
+	translation_xml_path="mods/translation_fi/translation.xml"
+	translation_csv_path="mods/translation_fi/translation.csv"
+> 
+</Mod>
+
+<!-- 
+	'is_translation="1"' turns of normal mod functionality, 
+	but makes the mod display under Language in the Options menu. 
+-->

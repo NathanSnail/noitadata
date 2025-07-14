@@ -29,3 +29,9 @@ shutil.copytree(
     "daily_practice_mod",
     dirs_exist_ok=True,
 )
+shutil.rmtree("daily_practice_mod")
+shutil.copytree(
+    "/home/nathan/.local/share/Steam/steamapps/common/Noita/mods/translation_fi/",
+    "translation_fi_mod",
+    dirs_exist_ok=True,
+)
